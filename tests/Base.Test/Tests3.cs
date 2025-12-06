@@ -4,7 +4,7 @@ namespace Finisher.Base.Test;
 
 [ClassDataSource<DataClass>]
 [ClassConstructor<DependencyInjectionClassConstructor>]
-public class AndEvenMoreTests(DataClass dataClass)
+internal class AndEvenMoreTests(DataClass dataClass)
 {
     [Test]
     public void HaveFun()

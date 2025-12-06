@@ -2,7 +2,7 @@
 
 namespace Finisher.Base.Test.Data;
 
-public class DataClass : IAsyncInitializer, IAsyncDisposable
+internal class DataClass : IAsyncInitializer, IAsyncDisposable
 {
     public Task InitializeAsync()
     {

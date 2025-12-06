@@ -4,7 +4,7 @@ namespace Finisher.Base.Test;
 
 [Arguments("Hello")]
 [Arguments("World")]
-public class MoreTests(string title)
+internal class MoreTests(string title)
 {
     [Test]
     public void ClassLevelDataRow()

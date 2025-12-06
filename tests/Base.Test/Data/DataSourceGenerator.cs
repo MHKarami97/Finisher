@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Base.Test.Data;
 
-public class DataGenerator : DataSourceGeneratorAttribute<int, int, int>
+internal sealed class DataGenerator : DataSourceGeneratorAttribute<int, int, int>
 {
     protected override IEnumerable<Func<(int, int, int)>> GenerateDataSources(DataGeneratorMetadata dataGeneratorMetadata)
     {

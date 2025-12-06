@@ -10,7 +10,7 @@ internal static class SwaggerAuth
     {
         services.Configure<SwaggerAuthOptions>(
             configuration.GetSection(SwaggerAuthOptions.SectionName));
-        
+
         services
             .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
@@ -24,7 +24,7 @@ internal static class SwaggerAuth
 
         services.AddRazorPages();
     }
-    
+
     public static void ConfigureSwaggerAuth(this WebApplication app)
     {
         app.UseWhen(
@@ -43,12 +43,12 @@ internal static class SwaggerAuth
                     await context.ChallengeAsync(CookieAuthenticationDefaults.AuthenticationScheme);
                 });
             });
-        
+
         app.MapRazorPages();
     }
 }
 
-public sealed class SwaggerAuthOptions
+internal sealed class SwaggerAuthOptions
 {
     public const string SectionName = "SwaggerAuth";
 

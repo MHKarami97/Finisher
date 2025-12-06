@@ -2,7 +2,7 @@
 
 namespace Finisher.Base.Test.Data;
 
-public class DependencyInjectionClassConstructor : IClassConstructor
+internal class DependencyInjectionClassConstructor : IClassConstructor
 {
     public Task<object> Create(Type type, ClassConstructorMetadata classConstructorMetadata)
     {

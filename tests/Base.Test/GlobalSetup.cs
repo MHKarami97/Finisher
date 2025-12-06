@@ -6,7 +6,7 @@
 
 namespace Finisher.Base.Test;
 
-public class GlobalHooks
+internal class GlobalHooks
 {
     [Before(TestSession)]
     public static void SetUp()
