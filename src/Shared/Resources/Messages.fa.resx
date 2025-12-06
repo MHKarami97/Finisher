@@ -99,9 +99,6 @@
   <data name="NotFoundFor" xml:space="preserve">
     <value>آیتم مورد نظر برای {0} پیدا نشد</value>
   </data>
-  <data name="UnhandledException" xml:space="preserve">
-    <value>خطا داخلی در سیستم</value>
-  </data>
   <data name="TokenException" xml:space="preserve">
     <value>امکان بدست آوردن توکن وجود ندارد</value>
   </data>
@@ -111,4 +108,32 @@
   <data name="ExpiredToken" xml:space="preserve">
     <value>توکن منقضی شده است</value>
   </data>
+  <data name="UnhandledException" xml:space="preserve">
+  <value>خطای پیش‌بینی‌نشده در سامانه</value>
+</data>
+  <data name="UnhandledExceptionUserAction" xml:space="preserve">
+  <value>لطفاً کمی بعد دوباره تلاش کنید. در صورت تداوم مشکل، با پشتیبانی تماس بگیرید.</value>
+</data>
+
+  <data name="UnauthorizedExeption" xml:space="preserve">
+  <value>برای دسترسی به این بخش باید وارد سامانه شوید.</value>
+</data>
+  <data name="UnauthorizedExeptionUserAction" xml:space="preserve">
+  <value>با یک حساب کاربری معتبر وارد شوید و سپس دوباره تلاش کنید.</value>
+</data>
+
+  <data name="ForbiddenExeption" xml:space="preserve">
+  <value>شما مجوز دسترسی به این بخش را ندارید.</value>
+</data>
+  <data name="ForbiddenExeptionUserAction" xml:space="preserve">
+  <value>اگر فکر می‌کنید باید به این بخش دسترسی داشته باشید، با پشتیبانی یا مدیر سامانه تماس بگیرید.</value>
+</data>
+
+  <data name="NotFoundExeption" xml:space="preserve">
+  <value>منبع مورد نظر پیدا نشد.</value>
+</data>
+  <data name="NotFoundExeptionUserAction" xml:space="preserve">
+  <value>آدرس یا موردی را که به دنبال آن هستید بررسی کنید و سپس دوباره تلاش کنید.</value>
+</data>
+
 </root>

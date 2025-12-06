@@ -60,7 +60,25 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to کانکشن دیتابیس پیدا نشد.
+        ///   Looks up a localized string similar to Item Already exists.
+        /// </summary>
+        public static string AlreadyExist {
+            get {
+                return ResourceManager.GetString("AlreadyExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item {0} Already exists.
+        /// </summary>
+        public static string AlreadyExistItem {
+            get {
+                return ResourceManager.GetString("AlreadyExistItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Connection string not found.
         /// </summary>
         public static string ConnectionStringNotFound {
             get {
@@ -69,7 +87,7 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to رمز عبوری فعلی مورد نیاز است.
+        ///   Looks up a localized string similar to Current password is required.
         /// </summary>
         public static string CurrentPasswordRequired {
             get {
@@ -78,7 +96,25 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to خطا در تایید ایمیل.
+        ///   Looks up a localized string similar to Must be less than {0}.
+        /// </summary>
+        public static string DateTimeGreaterThan {
+            get {
+                return ResourceManager.GetString("DateTimeGreaterThan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Must be less than or equal to {0}.
+        /// </summary>
+        public static string DateTimeLessThanOrEqual {
+            get {
+                return ResourceManager.GetString("DateTimeLessThanOrEqual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email confirmation failed.
         /// </summary>
         public static string EmailConfirmationFailed {
             get {
@@ -87,97 +123,34 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to مقدار مورد نظر برای {0} قابل قبول نیست.
+        ///   Looks up a localized string similar to Token is expired.
         /// </summary>
-        public static string InvalidEnum {
+        public static string ExpiredToken {
             get {
-                return ResourceManager.GetString("InvalidEnum", resourceCulture);
+                return ResourceManager.GetString("ExpiredToken", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to کد تایید وارد شده اشتباه است.
+        ///   Looks up a localized string similar to You do not have permission to access this resource.
         /// </summary>
-        public static string InvalidVerificationCode {
+        public static string ForbiddenExeption {
             get {
-                return ResourceManager.GetString("InvalidVerificationCode", resourceCulture);
+                return ResourceManager.GetString("ForbiddenExeption", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to طول مورد نظر باید بین {0} و {1} باشد. طول کنونی: {2}.
+        ///   Looks up a localized string similar to If you believe you should have access, contact support or your administrator.
         /// </summary>
-        public static string LengthBetween {
+        public static string ForbiddenExeptionUserAction {
             get {
-                return ResourceManager.GetString("LengthBetween", resourceCulture);
+                return ResourceManager.GetString("ForbiddenExeptionUserAction", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to مقدار پیش فرض برای این مورد قابل قبول نیست.
-        /// </summary>
-        public static string NotDefaultValue {
-            get {
-                return ResourceManager.GetString("NotDefaultValue", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to مقدار وارد شده با پترن {0} مچ نمی‌شود.
-        /// </summary>
-        public static string NotMatchedPattern {
-            get {
-                return ResourceManager.GetString("NotMatchedPattern", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to مقدار {0} باید بیشتر از صفر باشد.
-        /// </summary>
-        public static string NotNegativeOrZero {
-            get {
-                return ResourceManager.GetString("NotNegativeOrZero", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to مقدار {0} نمی‌تواند بعد از {1} باشد.
-        /// </summary>
-        public static string NotValidDateRange {
-            get {
-                return ResourceManager.GetString("NotValidDateRange", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to کاربر مورد نظر پیدا نشد.
-        /// </summary>
-        public static string UserNotFound {
-            get {
-                return ResourceManager.GetString("UserNotFound", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to مقدار مورد نظر نمی‌توان خالی باشد.
-        /// </summary>
-        public static string ValueCanNotBeNull {
-            get {
-                return ResourceManager.GetString("ValueCanNotBeNull", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Length must be between {0} and {1}. Current length: {2}
-        /// </summary>
-        public static string ShortLengthBetween {
-            get {
-                return ResourceManager.GetString("ShortLengthBetween", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to must be greater than zero.
+        ///   Looks up a localized string similar to must be greater than zero..
         /// </summary>
         public static string GreaterThanZero {
             get {
@@ -186,97 +159,34 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to not valid value
+        ///   Looks up a localized string similar to Invalid value for enum {0}.
         /// </summary>
-        public static string NotValidValue {
+        public static string InvalidEnum {
             get {
-                return ResourceManager.GetString("NotValidValue", resourceCulture);
+                return ResourceManager.GetString("InvalidEnum", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to not null
+        ///   Looks up a localized string similar to Invalid file type.
         /// </summary>
-        public static string NotNull {
-            get {
-                return ResourceManager.GetString("NotNull", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to DateTimeGreaterThan 
-        /// </summary>
-        public static string DateTimeLessThanOrEqual  {
-            get {
-                return ResourceManager.GetString("DateTimeLessThanOrEqual", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to DateTimeGreaterThan 
-        /// </summary>
-        public static string DateTimeGreaterThan  {
-            get {
-                return ResourceManager.GetString("DateTimeGreaterThan", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MinLength 
-        /// </summary>
-        public static string MinLength  {
-            get {
-                return ResourceManager.GetString("MinLength", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to InvalidFileType 
-        /// </summary>
-        public static string InvalidFileType  {
+        public static string InvalidFileType {
             get {
                 return ResourceManager.GetString("InvalidFileType", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NotValidId 
+        ///   Looks up a localized string similar to Not valid value by regex.
         /// </summary>
-        public static string NotValidId  {
-            get {
-                return ResourceManager.GetString("NotValidId", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to AlreadyExist 
-        /// </summary>
-        public static string AlreadyExist  {
-            get {
-                return ResourceManager.GetString("AlreadyExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to AlreadyExistItem 
-        /// </summary>
-        public static string AlreadyExistItem  {
-            get {
-                return ResourceManager.GetString("AlreadyExistItem", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to InvalidRegex 
-        /// </summary>
-        public static string InvalidRegex  {
+        public static string InvalidRegex {
             get {
                 return ResourceManager.GetString("InvalidRegex", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to InvalidValueFor 
+        ///   Looks up a localized string similar to Invalid value for {0}.
         /// </summary>
         public static string InvalidValueFor {
             get {
@@ -285,7 +195,43 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NotFound 
+        ///   Looks up a localized string similar to Invalid verification code.
+        /// </summary>
+        public static string InvalidVerificationCode {
+            get {
+                return ResourceManager.GetString("InvalidVerificationCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Length must be between {0} and {1}. Current length: {2}.
+        /// </summary>
+        public static string LengthBetween {
+            get {
+                return ResourceManager.GetString("LengthBetween", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Minimum length is {0}.
+        /// </summary>
+        public static string MinLength {
+            get {
+                return ResourceManager.GetString("MinLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value cannot be the default value..
+        /// </summary>
+        public static string NotDefaultValue {
+            get {
+                return ResourceManager.GetString("NotDefaultValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item not found.
         /// </summary>
         public static string NotFound {
             get {
@@ -294,20 +240,83 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unhandled Exception.
+        ///   Looks up a localized string similar to The requested resource could not be found.
         /// </summary>
-        public static string UnhandledException {
+        public static string NotFoundExeption {
             get {
-                return ResourceManager.GetString("UnhandledException", resourceCulture);
+                return ResourceManager.GetString("NotFoundExeption", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Token could not be decrypted.
+        ///   Looks up a localized string similar to Check the address or the item you are looking for, then try again.
         /// </summary>
-        public static string TokenException {
+        public static string NotFoundExeptionUserAction {
             get {
-                return ResourceManager.GetString("TokenException", resourceCulture);
+                return ResourceManager.GetString("NotFoundExeptionUserAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item not found for {0}.
+        /// </summary>
+        public static string NotFoundFor {
+            get {
+                return ResourceManager.GetString("NotFoundFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value does not match required pattern: {0}.
+        /// </summary>
+        public static string NotMatchedPattern {
+            get {
+                return ResourceManager.GetString("NotMatchedPattern", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} must be greater than zero.
+        /// </summary>
+        public static string NotNegativeOrZero {
+            get {
+                return ResourceManager.GetString("NotNegativeOrZero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value can not be null.
+        /// </summary>
+        public static string NotNull {
+            get {
+                return ResourceManager.GetString("NotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} cannot be after {1}.
+        /// </summary>
+        public static string NotValidDateRange {
+            get {
+                return ResourceManager.GetString("NotValidDateRange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The provided ID is not valid.
+        /// </summary>
+        public static string NotValidId {
+            get {
+                return ResourceManager.GetString("NotValidId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid Value.
+        /// </summary>
+        public static string NotValidValue {
+            get {
+                return ResourceManager.GetString("NotValidValue", resourceCulture);
             }
         }
         
@@ -321,20 +330,74 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ExpiredToken
+        ///   Looks up a localized string similar to Length must be between {0} and {1}.
         /// </summary>
-        public static string ExpiredToken {
+        public static string ShortLengthBetween {
             get {
-                return ResourceManager.GetString("ExpiredToken", resourceCulture);
+                return ResourceManager.GetString("ShortLengthBetween", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to NotFoundFor
+        ///   Looks up a localized string similar to Token could not be decrypted.
         /// </summary>
-        public static string NotFoundFor {
+        public static string TokenException {
             get {
-                return ResourceManager.GetString("NotFoundFor", resourceCulture);
+                return ResourceManager.GetString("TokenException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You need to sign in to access this resource.
+        /// </summary>
+        public static string UnauthorizedExeption {
+            get {
+                return ResourceManager.GetString("UnauthorizedExeption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in with a valid account and then try again.
+        /// </summary>
+        public static string UnauthorizedExeptionUserAction {
+            get {
+                return ResourceManager.GetString("UnauthorizedExeptionUserAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unhandled Exception.
+        /// </summary>
+        public static string UnhandledException {
+            get {
+                return ResourceManager.GetString("UnhandledException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please try again later. If the problem continues, contact support.
+        /// </summary>
+        public static string UnhandledExceptionUserAction {
+            get {
+                return ResourceManager.GetString("UnhandledExceptionUserAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User not found.
+        /// </summary>
+        public static string UserNotFound {
+            get {
+                return ResourceManager.GetString("UserNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value cannot be null or empty.
+        /// </summary>
+        public static string ValueCanNotBeNull {
+            get {
+                return ResourceManager.GetString("ValueCanNotBeNull", resourceCulture);
             }
         }
     }

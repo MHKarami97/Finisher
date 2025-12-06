@@ -123,6 +123,33 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Token is expired.
+        /// </summary>
+        public static string ExpiredToken {
+            get {
+                return ResourceManager.GetString("ExpiredToken", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You do not have permission to access this resource.
+        /// </summary>
+        public static string ForbiddenExeption {
+            get {
+                return ResourceManager.GetString("ForbiddenExeption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to If you believe you should have access, contact support or your administrator.
+        /// </summary>
+        public static string ForbiddenExeptionUserAction {
+            get {
+                return ResourceManager.GetString("ForbiddenExeptionUserAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to must be greater than zero..
         /// </summary>
         public static string GreaterThanZero {
@@ -132,7 +159,7 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid value for enum &apos;{0}&apos;..
+        ///   Looks up a localized string similar to Invalid value for enum {0}.
         /// </summary>
         public static string InvalidEnum {
             get {
@@ -159,7 +186,7 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Invalid value for &apos;{0}&apos;..
+        ///   Looks up a localized string similar to Invalid value for {0}.
         /// </summary>
         public static string InvalidValueFor {
             get {
@@ -213,6 +240,33 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The requested resource could not be found.
+        /// </summary>
+        public static string NotFoundExeption {
+            get {
+                return ResourceManager.GetString("NotFoundExeption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check the address or the item you are looking for, then try again.
+        /// </summary>
+        public static string NotFoundExeptionUserAction {
+            get {
+                return ResourceManager.GetString("NotFoundExeptionUserAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Item not found for {0}.
+        /// </summary>
+        public static string NotFoundFor {
+            get {
+                return ResourceManager.GetString("NotFoundFor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Value does not match required pattern: {0}.
         /// </summary>
         public static string NotMatchedPattern {
@@ -222,7 +276,7 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &apos;{0}&apos; must be greater than zero..
+        ///   Looks up a localized string similar to {0} must be greater than zero.
         /// </summary>
         public static string NotNegativeOrZero {
             get {
@@ -294,11 +348,38 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You need to sign in to access this resource.
+        /// </summary>
+        public static string UnauthorizedExeption {
+            get {
+                return ResourceManager.GetString("UnauthorizedExeption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in with a valid account and then try again.
+        /// </summary>
+        public static string UnauthorizedExeptionUserAction {
+            get {
+                return ResourceManager.GetString("UnauthorizedExeptionUserAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unhandled Exception.
         /// </summary>
         public static string UnhandledException {
             get {
                 return ResourceManager.GetString("UnhandledException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please try again later. If the problem continues, contact support.
+        /// </summary>
+        public static string UnhandledExceptionUserAction {
+            get {
+                return ResourceManager.GetString("UnhandledExceptionUserAction", resourceCulture);
             }
         }
         
@@ -317,24 +398,6 @@ namespace Finisher.Shared.Resources {
         public static string ValueCanNotBeNull {
             get {
                 return ResourceManager.GetString("ValueCanNotBeNull", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to ExpiredToken
-        /// </summary>
-        public static string ExpiredToken {
-            get {
-                return ResourceManager.GetString("ExpiredToken", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to NotFoundFor
-        /// </summary>
-        public static string NotFoundFor {
-            get {
-                return ResourceManager.GetString("NotFoundFor", resourceCulture);
             }
         }
     }
