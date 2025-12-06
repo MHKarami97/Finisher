@@ -7,4 +7,3 @@ global using Finisher.Shared.Resources;
 global using FluentValidation;
 global using Mapster;
 global using Microsoft.EntityFrameworkCore;
-global using Wolverine;

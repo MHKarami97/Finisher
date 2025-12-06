@@ -482,3 +482,6 @@ $RECYCLE.BIN/
 
 .idea
 /src/Web/wwwroot/uploads
+
+BuildHost-netcore/
+BuildHost-net472/

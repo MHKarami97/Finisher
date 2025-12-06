@@ -1,4 +1,5 @@
 ﻿using Finisher.Shared.Validate;
+using Wolverine;
 using Wolverine.Attributes;
 using ValidationException = Finisher.Application.Exceptions.ValidationException;
 

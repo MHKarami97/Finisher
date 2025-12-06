@@ -7,8 +7,8 @@ internal static class Registration
 {
     public static void ConfigureRegistration(this WebApplicationBuilder builder, IConfiguration configuration)
     {
-        builder.AddApplicationServices(configuration);
         builder.AddDomainServices();
         builder.AddInfrastructureServices();
+        builder.AddApplicationServices(configuration);
     }
 }

@@ -24,10 +24,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" PrivateAssets="all"/>
-  </ItemGroup>
+    <None Remove="src/Web/BuildHost-netcore/**"/>
+    <Content Remove="src/Web/BuildHost-netcore/**"/>
+    <Compile Remove="src/Web/BuildHost-netcore/**"/>
+    <EmbeddedResource Remove="src/Web/BuildHost-netcore/**"/>
 
-  <ItemGroup>
-    <AdditionalFiles Include="../../BannedSymbols.txt"/>
+    <None Remove="src/Web/BuildHost-net472/**"/>
+    <Content Remove="src/Web/BuildHost-net472/**"/>
+    <Compile Remove="src/Web/BuildHost-net472/**"/>
+    <EmbeddedResource Remove="src/Web/BuildHost-net472/**"/>
   </ItemGroup>
 </Project>

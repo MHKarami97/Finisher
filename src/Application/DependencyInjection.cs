@@ -5,6 +5,7 @@ using JasperFx.CodeGeneration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Wolverine;
 using Wolverine.FluentValidation;
 
 namespace Finisher.Application;
@@ -22,11 +23,14 @@ public static class DependencyInjection
 
         builder.UseWolverine(o =>
         {
-            o.Durability.Mode = DurabilityMode.MediatorOnly;
+            var appAssembly = typeof(DependencyInjection).Assembly;
+            o.ApplicationAssembly = appAssembly;
+            o.Discovery.IncludeAssembly(appAssembly);
+            o.Discovery.IgnoreAssembly(typeof(Microsoft.CodeAnalysis.CSharp.CSharpCompilation).Assembly);
             o.UseFluentValidation();
-            o.Discovery.IncludeAssembly(Assembly.GetExecutingAssembly());
+            o.Durability.Mode = DurabilityMode.MediatorOnly;
             o.DefaultExecutionTimeout = TimeSpan.FromMinutes(int.Parse(configuration["Cache:HandlerTimeOutOnMinute"]!, CultureInfo.InvariantCulture));
-            o.CodeGeneration.TypeLoadMode = builder.Environment.IsDevelopment() ? TypeLoadMode.Dynamic : TypeLoadMode.Static;
+            o.CodeGeneration.TypeLoadMode = builder.Environment.IsDevelopment() ? TypeLoadMode.Auto : TypeLoadMode.Static;
         });
     }
 

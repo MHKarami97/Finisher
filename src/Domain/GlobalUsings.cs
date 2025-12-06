@@ -1,5 +1,4 @@
-﻿global using System.Diagnostics.CodeAnalysis;
-global using Ardalis.Specification;
+﻿global using Ardalis.Specification;
 global using Finisher.Domain.Common;
 global using Finisher.Domain.Exceptions;
 global using Finisher.Domain.Interfaces;
