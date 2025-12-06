@@ -13,6 +13,9 @@ public static class MainConsts
     public const int SqlTimeOutOnSecond = 30;
     public const string Swagger = "/swagger";
     public const string SwaggerLogin = "/SwaggerLogin";
+    public const string SwaggerCookie = "SwaggerCookie";
+    public const string SwaggerConfigVersion = "SwaggerConfigVersion";
+    public const string SwaggerAccess = "SwaggerAccess";
     public const string MigrationTable = "Migration";
     public const string IdentityOptions = "IdentityOptions";
     public const string DevelopmentAdminVerifyCode = "11111";

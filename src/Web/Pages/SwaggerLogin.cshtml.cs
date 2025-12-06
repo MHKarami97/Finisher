@@ -1,4 +1,5 @@
-﻿using System.Security.Claims;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
 using Finisher.Shared.Consts;
 using Finisher.Web.Configurations;
 using Microsoft.AspNetCore.Authentication;
@@ -8,18 +9,17 @@ using Microsoft.Extensions.Options;
 
 namespace Finisher.Web.Pages;
 
-internal sealed class SwaggerLogin(IOptions<SwaggerAuthOptions> optionsAccessor) : PageModel
+public class SwaggerLoginModel(IOptions<SwaggerAuthOptions> optionsAccessor) : PageModel
 {
     private readonly SwaggerAuthOptions _options = optionsAccessor.Value;
 
+    [Required]
     [BindProperty]
-    public string Username { get; set; } = string.Empty;
+    public required string Username { get; set; }
 
+    [Required]
     [BindProperty]
-    public string Password { get; set; } = string.Empty;
-
-    [BindProperty(SupportsGet = true)]
-    public string ReturnUrl { get; set; } = MainConsts.Swagger;
+    public required string Password { get; set; }
 
     public void OnGet()
     {
@@ -38,35 +38,28 @@ internal sealed class SwaggerLogin(IOptions<SwaggerAuthOptions> optionsAccessor)
 
         if (!isValidUser)
         {
-            ModelState.AddModelError(string.Empty, "Invalid username or password.");
+            ModelState.AddModelError(string.Empty, "Invalid username or password");
             return Page();
         }
 
-        var claims = new[]
-        {
-            new Claim(ClaimTypes.Name, Username),
-            new Claim("SwaggerAccess", "Allowed")
-        };
+        var version = $"{_options.Username}:{_options.Password}";
+        var versionHash = Convert.ToBase64String(System.Security.Cryptography.SHA256.HashData(System.Text.Encoding.UTF8.GetBytes(version)));
+        var claims = new[] { new Claim(ClaimTypes.Name, Username), new Claim(MainConsts.SwaggerAccess, "Allowed"), new Claim(MainConsts.SwaggerConfigVersion, versionHash) };
 
-        var identity = new ClaimsIdentity(claims, "SwaggerCookie");
+        var identity = new ClaimsIdentity(claims, MainConsts.SwaggerCookie);
         var principal = new ClaimsPrincipal(identity);
 
         await HttpContext.SignInAsync(
-            "SwaggerCookie",
+            MainConsts.SwaggerCookie,
             principal,
-            new AuthenticationProperties
-            {
-                IsPersistent = true
-            });
+            new AuthenticationProperties { IsPersistent = true });
 
-        var target = string.IsNullOrWhiteSpace(ReturnUrl) ? MainConsts.Swagger : ReturnUrl;
-
-        return LocalRedirect(target);
+        return LocalRedirect(MainConsts.Swagger);
     }
 
     public async Task<IActionResult> OnPostLogoutAsync()
     {
-        await HttpContext.SignOutAsync("SwaggerCookie");
+        await HttpContext.SignOutAsync(MainConsts.SwaggerCookie);
         return RedirectToPage();
     }
 }

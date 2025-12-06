@@ -138,4 +138,25 @@
   <data name="BadRequestExeptionUserAction" xml:space="preserve">
     <value>اطلاعات واردشده را بررسی کنید، خطاها را برطرف کنید و سپس دوباره تلاش کنید</value>
   </data>
+  <data name="Login" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="Swagger" xml:space="preserve">
+    <value>Swagger</value>
+  </data>
+  <data name="SwaggerDescription" xml:space="preserve">
+    <value>ورود به بخش سرویس‌ها</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>نام کاربری</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>رمز عبور</value>
+  </data>
+  <data name="UsernameDescription" xml:space="preserve">
+    <value>وارد کردن نام کاربری</value>
+  </data>
+  <data name="PasswordDescription" xml:space="preserve">
+    <value>وارد کردن رمز عبور</value>
+  </data>
 </root>

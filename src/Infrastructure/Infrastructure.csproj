@@ -6,20 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore"/>
     <PackageReference Include="Azure.Identity"/>
     <PackageReference Include="EFCoreSecondLevelCacheInterceptor.EasyCaching.Core"/>
     <PackageReference Include="jose-jwt"/>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer"/>
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore"/>
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"/>
+    <PackageReference Include="SixLabors.ImageSharp"/>
+    <PackageReference Include="SixLabors.ImageSharp.Web"/>
+    <PackageReference Include="Xabe.FFmpeg"/>
+    <PackageReference Include="Ardalis.Specification.EntityFrameworkCore"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies"/>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools"/>
-    <PackageReference Include="SixLabors.ImageSharp"/>
-    <PackageReference Include="SixLabors.ImageSharp.Web"/>
-    <PackageReference Include="Xabe.FFmpeg"/>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore"/>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design"/>
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +39,11 @@
     <None Update="Data\Seed\allCity.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="**\BuildHost-netcore\**\*" />
+    <_ContentIncludedByDefault Remove="**\BuildHost-net472\**\*" />
   </ItemGroup>
 
 </Project>

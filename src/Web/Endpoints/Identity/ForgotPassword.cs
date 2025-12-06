@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Endpoints.Identity;
 
-internal class ForgotPassword(IMessageBus bus) : Endpoint<ForgotPasswordCommand>
+internal class ForgotPassword(IMessageBus bus) : EndpointWithoutRequest
 {
     public override void Configure()
     {
@@ -11,9 +11,9 @@ internal class ForgotPassword(IMessageBus bus) : Endpoint<ForgotPasswordCommand>
         Summary(s => s.Summary = nameof(ForgotPassword));
     }
 
-    public override async Task HandleAsync(ForgotPasswordCommand req, CancellationToken ct)
+    public override async Task HandleAsync(CancellationToken ct)
     {
-        await bus.InvokeAsync(req, ct);
+        await bus.InvokeAsync(new ForgotPasswordCommand(), ct);
         await Send.NoContentAsync(ct);
     }
 }

@@ -34,4 +34,16 @@
     <Compile Remove="src/Web/BuildHost-net472/**"/>
     <EmbeddedResource Remove="src/Web/BuildHost-net472/**"/>
   </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="src/Infrastructure/BuildHost-netcore/**"/>
+    <Content Remove="src/Infrastructure/BuildHost-netcore/**"/>
+    <Compile Remove="src/Infrastructure/BuildHost-netcore/**"/>
+    <EmbeddedResource Remove="src/Infrastructure/BuildHost-netcore/**"/>
+
+    <None Remove="src/Infrastructure/BuildHost-net472/**"/>
+    <Content Remove="src/Infrastructure/BuildHost-net472/**"/>
+    <Compile Remove="src/Infrastructure/BuildHost-net472/**"/>
+    <EmbeddedResource Remove="src/Infrastructure/BuildHost-net472/**"/>
+  </ItemGroup>
 </Project>

@@ -231,6 +231,15 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Login.
+        /// </summary>
+        public static string Login {
+            get {
+                return ResourceManager.GetString("Login", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Minimum length is {0}.
         /// </summary>
         public static string MinLength {
@@ -339,6 +348,24 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Password.
+        /// </summary>
+        public static string Password {
+            get {
+                return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Password.
+        /// </summary>
+        public static string PasswordDescription {
+            get {
+                return ResourceManager.GetString("PasswordDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Phone number is required.
         /// </summary>
         public static string RequiredPhone {
@@ -353,6 +380,24 @@ namespace Finisher.Shared.Resources {
         public static string ShortLengthBetween {
             get {
                 return ResourceManager.GetString("ShortLengthBetween", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Swagger.
+        /// </summary>
+        public static string Swagger {
+            get {
+                return ResourceManager.GetString("Swagger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in to explore API.
+        /// </summary>
+        public static string SwaggerDescription {
+            get {
+                return ResourceManager.GetString("SwaggerDescription", resourceCulture);
             }
         }
         
@@ -398,6 +443,24 @@ namespace Finisher.Shared.Resources {
         public static string UnhandledExceptionUserAction {
             get {
                 return ResourceManager.GetString("UnhandledExceptionUserAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Username.
+        /// </summary>
+        public static string Username {
+            get {
+                return ResourceManager.GetString("Username", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Username.
+        /// </summary>
+        public static string UsernameDescription {
+            get {
+                return ResourceManager.GetString("UsernameDescription", resourceCulture);
             }
         }
         

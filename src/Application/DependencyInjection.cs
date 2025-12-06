@@ -30,7 +30,7 @@ public static class DependencyInjection
             o.UseFluentValidation();
             o.Durability.Mode = DurabilityMode.MediatorOnly;
             o.DefaultExecutionTimeout = TimeSpan.FromMinutes(int.Parse(configuration["Cache:HandlerTimeOutOnMinute"]!, CultureInfo.InvariantCulture));
-            o.CodeGeneration.TypeLoadMode = builder.Environment.IsDevelopment() ? TypeLoadMode.Auto : TypeLoadMode.Static;
+            o.CodeGeneration.TypeLoadMode = builder.Environment.IsDevelopment() ? TypeLoadMode.Dynamic : TypeLoadMode.Static;
         });
     }
 
