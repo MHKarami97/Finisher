@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.IdentityModel.Tokens;
-using Finisher.Application.Exceptions;
+﻿using Finisher.Application.Exceptions;
 using Finisher.Shared.Exceptions;
 using Finisher.Shared.Resources;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Finisher.Web.Extensions;
 

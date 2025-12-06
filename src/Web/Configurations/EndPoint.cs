@@ -1,14 +1,14 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 using FastEndpoints.Swagger;
-using FluentValidation.AspNetCore;
 using Finisher.Shared.Consts.Identity;
 using Finisher.Web.Extensions;
+using FluentValidation.AspNetCore;
 using Namotion.Reflection;
 
 namespace Finisher.Web.Configurations;
 
-public static class EndPoint
+internal static class EndPoint
 {
     public static void ConfigureEndPoint(this IServiceCollection services)
     {

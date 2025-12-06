@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Application.FunctionalTests;
 
-public static class TestDatabaseFactory
+internal static class TestDatabaseFactory
 {
     public static async Task<ITestDatabase> CreateAsync()
     {

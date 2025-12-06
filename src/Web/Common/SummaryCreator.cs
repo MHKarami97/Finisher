@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Web.Common;
 
-public static class SummaryCreator
+internal static class SummaryCreator
 {
     public static string Create(string entity) => $"Create a new {entity.ToLowerInvariant()}";
     public static string GetById(string entity) => $"Get the specified {entity.ToLowerInvariant()} by id";

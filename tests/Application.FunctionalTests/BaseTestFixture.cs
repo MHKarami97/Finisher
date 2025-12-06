@@ -6,7 +6,7 @@ using static Testing;
 
 [SuppressMessage("ReSharper", "InconsistentNaming")]
 [TestFixture]
-public abstract class BaseTestFixture
+internal abstract class BaseTestFixture
 {
     [SetUp]
     public async Task TestSetUp()

@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Finisher.Domain.Interfaces;
+﻿using Finisher.Domain.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace Finisher.Infrastructure.Identity;
 

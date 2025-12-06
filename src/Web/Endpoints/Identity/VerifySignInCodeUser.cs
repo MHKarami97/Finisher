@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Endpoints.Identity;
 
-public class VerifySignInCodeUser(IMessageBus bus) : Endpoint<VerifySignInCodeUserCommand, string>
+internal class VerifySignInCodeUser(IMessageBus bus) : Endpoint<VerifySignInCodeUserCommand, string>
 {
     public override void Configure()
     {

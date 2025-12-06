@@ -81,7 +81,7 @@ finally
 
 namespace Finisher.Web
 {
-    public partial class Program
+    internal partial class Program
     {
     }
 }

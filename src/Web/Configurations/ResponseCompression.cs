@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Configurations;
 
-public static class ResponseCompression
+internal static class ResponseCompression
 {
     public static void ConfigureResponseCompression(this IServiceCollection services)
     {

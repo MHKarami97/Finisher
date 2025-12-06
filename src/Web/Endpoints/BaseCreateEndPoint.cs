@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Web.Endpoints;
 
-public abstract class BaseCreateEndPoint<TRequest, TResponse>(IMessageBus bus, string apiName) : Endpoint<TRequest, TResponse>
+internal abstract class BaseCreateEndPoint<TRequest, TResponse>(IMessageBus bus, string apiName) : Endpoint<TRequest, TResponse>
     where TRequest : notnull
 {
     protected IMessageBus Bus { get; } = bus;
@@ -17,7 +17,7 @@ public abstract class BaseCreateEndPoint<TRequest, TResponse>(IMessageBus bus, s
     }
 }
 
-public abstract class BaseCreateEndPoint<TRequest>(IMessageBus bus, string apiName) : Endpoint<TRequest>
+internal abstract class BaseCreateEndPoint<TRequest>(IMessageBus bus, string apiName) : Endpoint<TRequest>
     where TRequest : notnull
 {
     protected IMessageBus Bus { get; } = bus;

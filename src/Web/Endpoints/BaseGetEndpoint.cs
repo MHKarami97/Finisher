@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Endpoints;
 
-public abstract class BaseGetEndpoint<TRequest, TResponse>(IMessageBus bus, string apiName, string idType = ApiRoutes.IdRoute) : Endpoint<TRequest, TResponse>
+internal abstract class BaseGetEndpoint<TRequest, TResponse>(IMessageBus bus, string apiName, string idType = ApiRoutes.IdRoute) : Endpoint<TRequest, TResponse>
     where TRequest : notnull
 {
     protected IMessageBus Bus { get; } = bus;

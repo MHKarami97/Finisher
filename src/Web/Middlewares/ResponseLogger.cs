@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Web.Middlewares;
 
-public class ResponseLogger<TRequest, TResponse> : IPostProcessor<TRequest, TResponse>
+internal class ResponseLogger<TRequest, TResponse> : IPostProcessor<TRequest, TResponse>
 {
     public Task PostProcessAsync(IPostProcessorContext<TRequest, TResponse> context, CancellationToken ct)
     {

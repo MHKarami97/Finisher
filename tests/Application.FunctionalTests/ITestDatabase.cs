@@ -2,7 +2,7 @@
 
 namespace Finisher.Application.FunctionalTests;
 
-public interface ITestDatabase
+internal interface ITestDatabase
 {
     Task InitialiseAsync();
 

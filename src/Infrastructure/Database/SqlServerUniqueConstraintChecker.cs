@@ -1,5 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
-using Finisher.Application.Interfaces;
+﻿using Finisher.Application.Interfaces;
+using Microsoft.Data.SqlClient;
 
 namespace Finisher.Infrastructure.Database;
 

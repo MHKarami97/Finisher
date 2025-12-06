@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Web.Endpoints;
 
-public abstract class BaseGetPaginationEndpoint<TRequest, TResponse>(IMessageBus bus, string apiName) : Endpoint<TRequest, TResponse>
+internal abstract class BaseGetPaginationEndpoint<TRequest, TResponse>(IMessageBus bus, string apiName) : Endpoint<TRequest, TResponse>
     where TRequest : notnull
 {
     protected IMessageBus Bus { get; } = bus;

@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Web.Configurations;
 
-public static class Cors
+internal static class Cors
 {
     public static void ConfigureCors(this IServiceCollection services, IConfiguration configuration)
     {
@@ -27,7 +27,7 @@ public static class Cors
         app.UseCors(setting.Name);
     }
 
-    public sealed class CorsSetting
+    internal sealed class CorsSetting
     {
         public required string Name { get; init; }
         public string[] Origins { get; init; } = [];

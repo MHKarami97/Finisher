@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Endpoints.Identity;
 
-public class ForgotPassword(IMessageBus bus) : Endpoint<ForgotPasswordCommand>
+internal class ForgotPassword(IMessageBus bus) : Endpoint<ForgotPasswordCommand>
 {
     public override void Configure()
     {

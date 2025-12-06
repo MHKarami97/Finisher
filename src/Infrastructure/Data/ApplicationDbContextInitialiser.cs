@@ -1,12 +1,12 @@
 ﻿using System.Reflection;
 using System.Security.Claims;
+using Finisher.Domain.Constants;
+using Finisher.Infrastructure.Identity;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Finisher.Domain.Constants;
-using Finisher.Infrastructure.Identity;
 
 namespace Finisher.Infrastructure.Data;
 

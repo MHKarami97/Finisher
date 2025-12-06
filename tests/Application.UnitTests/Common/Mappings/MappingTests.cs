@@ -1,13 +1,13 @@
 ﻿using System.Runtime.CompilerServices;
-using Mapster;
-using MapsterMapper;
 using Finisher.Application.Business.Identity.Queries;
 using Finisher.Domain.Business.User.Entities;
+using Mapster;
+using MapsterMapper;
 using NUnit.Framework;
 
 namespace Finisher.Application.UnitTests.Common.Mappings;
 
-public class MappingTests
+internal class MappingTests
 {
     // private readonly IConfigurationProvider _configuration;
     private readonly IMapper _mapper;

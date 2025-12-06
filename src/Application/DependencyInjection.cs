@@ -1,10 +1,10 @@
 ﻿using System.Globalization;
 using System.Reflection;
+using Finisher.Application.Configurations;
 using JasperFx.CodeGeneration;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Finisher.Application.Configurations;
 using Wolverine.FluentValidation;
 
 namespace Finisher.Application;
@@ -32,6 +32,6 @@ public static class DependencyInjection
 
     public static void AddDomainServices(this IHostApplicationBuilder builder)
     {
-        
+
     }
 }

@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Diagnostics;
-using Finisher.Domain.Common;
+﻿using Finisher.Domain.Common;
 using Finisher.Shared.Validate;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Wolverine;
 
 namespace Finisher.Infrastructure.Data.Interceptors;

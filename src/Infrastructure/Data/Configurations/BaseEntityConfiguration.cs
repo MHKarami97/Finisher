@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Finisher.Domain.Common;
+﻿using Finisher.Domain.Common;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Finisher.Infrastructure.Data.Configurations;
 

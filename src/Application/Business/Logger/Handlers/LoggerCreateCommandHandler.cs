@@ -1,5 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
-using Finisher.Application.Business.Logger.Commands;
+﻿using Finisher.Application.Business.Logger.Commands;
+using Microsoft.Extensions.Logging;
 
 namespace Finisher.Application.Business.Logger.Handlers;
 

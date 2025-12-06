@@ -2,14 +2,14 @@
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
-using Jose;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
 using Finisher.Application.Dto;
 using Finisher.Application.Interfaces.Security;
 using Finisher.Application.Interfaces.User;
 using Finisher.Domain.Constants;
 using Finisher.Shared.Consts.Identity;
+using Jose;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Finisher.Infrastructure.Identity;
 

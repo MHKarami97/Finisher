@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Hosting;
-using Finisher.Application.Business.Identity.Commands;
+﻿using Finisher.Application.Business.Identity.Commands;
 using Finisher.Application.Interfaces.Security;
 using Finisher.Application.Interfaces.User;
+using Microsoft.Extensions.Hosting;
 
 namespace Finisher.Application.Business.Identity.Handlers;
 

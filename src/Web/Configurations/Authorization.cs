@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Finisher.Shared.Consts.Identity;
+﻿using Finisher.Shared.Consts.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Finisher.Web.Configurations;
 
-public static class Authorization
+internal static class Authorization
 {
     public static void ConfigureAuthorization(this IServiceCollection services)
     {

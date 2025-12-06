@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Web.Common;
 
-public static class ApiRoutes
+internal static class ApiRoutes
 {
     public const string Api = "api";
     public const string VersioningPrefix = "v";

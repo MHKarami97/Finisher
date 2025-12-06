@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Web.Configurations;
 
-public static class Middleware
+internal static class Middleware
 {
     public static void ConfigureMiddleware(this WebApplication app)
     {

@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Web.Middlewares;
 
-public class RequestLogger<TRequest> : IPreProcessor<TRequest>
+internal class RequestLogger<TRequest> : IPreProcessor<TRequest>
 {
     public Task PreProcessAsync(IPreProcessorContext<TRequest> context, CancellationToken ct)
     {

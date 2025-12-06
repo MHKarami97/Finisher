@@ -1,6 +1,6 @@
 ﻿using System.Data;
-using Microsoft.EntityFrameworkCore.Storage;
 using Finisher.Application.Interfaces.Db;
+using Microsoft.EntityFrameworkCore.Storage;
 
 namespace Finisher.Infrastructure.Data;
 

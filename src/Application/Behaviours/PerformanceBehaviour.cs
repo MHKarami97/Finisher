@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
-using Microsoft.Extensions.Logging;
 using Finisher.Application.Interfaces.User;
+using Microsoft.Extensions.Logging;
 using Wolverine.Attributes;
 
 namespace Finisher.Application.Behaviours;

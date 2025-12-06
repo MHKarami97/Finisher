@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Endpoints.Identity;
 
-public class GetCurrentUser(IMessageBus bus) : Endpoint<GetCurrentUserQuery, UserDto>
+internal class GetCurrentUser(IMessageBus bus) : Endpoint<GetCurrentUserQuery, UserDto>
 {
     public override void Configure()
     {

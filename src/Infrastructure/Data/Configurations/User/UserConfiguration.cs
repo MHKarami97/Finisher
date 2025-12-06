@@ -1,6 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Finisher.Infrastructure.Identity;
+﻿using Finisher.Infrastructure.Identity;
 using Finisher.Shared.Consts.Identity;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Finisher.Infrastructure.Data.Configurations.User;
 

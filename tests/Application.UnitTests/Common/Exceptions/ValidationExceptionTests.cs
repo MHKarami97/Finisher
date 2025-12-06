@@ -1,11 +1,11 @@
-﻿using FluentAssertions;
+﻿using Finisher.Application.Exceptions;
+using FluentAssertions;
 using FluentValidation.Results;
-using Finisher.Application.Exceptions;
 using NUnit.Framework;
 
 namespace Finisher.Application.UnitTests.Common.Exceptions;
 
-public class ValidationExceptionTests
+internal class ValidationExceptionTests
 {
     [Test]
     public void DefaultConstructorCreatesAnEmptyErrorDictionary()

@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Finisher.Domain.Enums;
+﻿using Finisher.Domain.Enums;
+using Microsoft.AspNetCore.Http;
 
 namespace Finisher.Application.Interfaces;
 

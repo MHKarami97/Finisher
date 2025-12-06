@@ -1,6 +1,6 @@
 ﻿namespace Finisher.Web.Configurations;
 
-public static class Kestrel
+internal static class Kestrel
 {
     public static void ConfigureKestrel(this WebApplicationBuilder builder, IConfiguration configuration)
     {
@@ -15,7 +15,7 @@ public static class Kestrel
         });
     }
 
-    public sealed class KestrelSetting
+    internal sealed class KestrelSetting
     {
         public required bool AddServerHeader { get; init; }
         public required long MaxRequestBodySize { get; init; }

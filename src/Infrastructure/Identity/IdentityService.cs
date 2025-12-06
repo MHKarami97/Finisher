@@ -1,10 +1,10 @@
 using System.Globalization;
 using System.Security;
 using System.Security.Claims;
-using Microsoft.AspNetCore.Identity;
 using Finisher.Application.Business.Identity.Queries;
 using Finisher.Application.Interfaces.Security;
 using Finisher.Application.Interfaces.User;
+using Microsoft.AspNetCore.Identity;
 
 namespace Finisher.Infrastructure.Identity;
 

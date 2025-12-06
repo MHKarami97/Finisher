@@ -1,11 +1,11 @@
 ﻿using System.Linq.Expressions;
 using System.Reflection;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Logging;
 using Finisher.Application.Interfaces.Db;
 using Finisher.Domain.Common;
 using Finisher.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace Finisher.Infrastructure.Data;
 

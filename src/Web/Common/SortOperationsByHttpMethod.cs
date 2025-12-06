@@ -3,7 +3,7 @@ using NSwag.Generation.Processors.Contexts;
 
 namespace Finisher.Web.Common;
 
-public class SortOperationsByHttpMethod : IDocumentProcessor
+internal class SortOperationsByHttpMethod : IDocumentProcessor
 {
     public void Process(DocumentProcessorContext context)
     {

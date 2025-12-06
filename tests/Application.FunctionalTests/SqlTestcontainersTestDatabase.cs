@@ -1,14 +1,14 @@
 ﻿using System.Data.Common;
+using Finisher.Infrastructure.Data;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
-using Finisher.Infrastructure.Data;
 using Respawn;
 using Testcontainers.MsSql;
 
 namespace Finisher.Application.FunctionalTests;
 
-public class SqlTestcontainersTestDatabase : ITestDatabase
+internal class SqlTestcontainersTestDatabase : ITestDatabase
 {
     private const string DefaultDatabase = "FinisherTestDb";
     private readonly MsSqlContainer _container;

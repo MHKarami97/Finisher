@@ -1,10 +1,10 @@
-﻿using Microsoft.Extensions.Options;
-using Finisher.Application.Business.Logger.Commands;
+﻿using Finisher.Application.Business.Logger.Commands;
 using Finisher.Web.Configurations;
+using Microsoft.Extensions.Options;
 
 namespace Finisher.Web.Endpoints.Logger;
 
-public class CreateLoggerEndpoint(IMessageBus bus, IOptionsMonitor<UiLogger> uiLoggerOption) : BaseCreateEndPoint<LoggerCreateCommand>(bus, ApiName.Logger)
+internal class CreateLoggerEndpoint(IMessageBus bus, IOptionsMonitor<UiLogger> uiLoggerOption) : BaseCreateEndPoint<LoggerCreateCommand>(bus, ApiName.Logger)
 {
     public override void Configure()
     {

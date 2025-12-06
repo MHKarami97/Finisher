@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Endpoints.Identity;
 
-public class ChangePassword(IMessageBus bus) : Endpoint<ChangePasswordCommand>
+internal class ChangePassword(IMessageBus bus) : Endpoint<ChangePasswordCommand>
 {
     public override void Configure()
     {

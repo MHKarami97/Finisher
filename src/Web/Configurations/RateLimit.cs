@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Configurations;
 
-public static class RateLimit
+internal static class RateLimit
 {
     public static void ConfigureRateLimit(this IServiceCollection services, IConfiguration configuration)
     {

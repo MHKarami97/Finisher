@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Endpoints.Identity;
 
-public class ConfirmEmail(IMessageBus bus) : Endpoint<ConfirmEmailCommand>
+internal class ConfirmEmail(IMessageBus bus) : Endpoint<ConfirmEmailCommand>
 {
     public override void Configure()
     {

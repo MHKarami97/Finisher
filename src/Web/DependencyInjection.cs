@@ -1,8 +1,8 @@
 ﻿using Azure.Identity;
-using Microsoft.AspNetCore.Mvc;
 using Finisher.Application.Interfaces.User;
 using Finisher.Infrastructure.Data;
 using Finisher.Web.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Finisher.Web;
 

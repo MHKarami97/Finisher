@@ -1,10 +1,10 @@
 ﻿using Ardalis.Specification;
 using Ardalis.Specification.EntityFrameworkCore;
-using Mapster;
 using Finisher.Application.Interfaces.Db;
 using Finisher.Application.Mappings;
 using Finisher.Domain.Interfaces.Db;
 using Finisher.Domain.Models;
+using Mapster;
 
 namespace Finisher.Infrastructure.Repository;
 

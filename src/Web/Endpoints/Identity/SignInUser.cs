@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Endpoints.Identity;
 
-public class SignInUser(IMessageBus bus) : Endpoint<SignInUserCommand>
+internal class SignInUser(IMessageBus bus) : Endpoint<SignInUserCommand>
 {
     public override void Configure()
     {

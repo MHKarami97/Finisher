@@ -6,7 +6,7 @@ using Serilog.Filters;
 
 namespace Finisher.Web.Configurations;
 
-public static class Logger
+internal static class Logger
 {
     public static void ConfigureLogger(this IServiceCollection builder, IConfiguration configuration)
     {
@@ -34,12 +34,12 @@ public static class Logger
     }
 }
 
-public sealed class UiLogger
+internal sealed class UiLogger
 {
     public required bool IsEnabled { get; init; }
 }
 
-public class OpenTelemetryEnricher : ILogEventEnricher
+internal class OpenTelemetryEnricher : ILogEventEnricher
 {
     public void Enrich(LogEvent logEvent, ILogEventPropertyFactory propertyFactory)
     {

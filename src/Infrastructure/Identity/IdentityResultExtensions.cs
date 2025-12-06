@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Finisher.Application.Models;
+﻿using Finisher.Application.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Finisher.Infrastructure.Identity;
 

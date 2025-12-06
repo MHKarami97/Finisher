@@ -1,14 +1,14 @@
 ﻿using System.Data.Common;
+using Finisher.Infrastructure.Data;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
-using Finisher.Infrastructure.Data;
 using Respawn;
 
 namespace Finisher.Application.FunctionalTests;
 
-public class SqlTestDatabase : ITestDatabase
+internal class SqlTestDatabase : ITestDatabase
 {
     private readonly string _connectionString = null!;
     private SqlConnection _connection = null!;

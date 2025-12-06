@@ -1,9 +1,4 @@
 ﻿using EFCoreSecondLevelCacheInterceptor;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Finisher.Application.Interfaces;
 using Finisher.Application.Interfaces.Db;
 using Finisher.Application.Interfaces.Security;
@@ -15,6 +10,11 @@ using Finisher.Infrastructure.Database;
 using Finisher.Infrastructure.File;
 using Finisher.Infrastructure.Identity;
 using Finisher.Infrastructure.Repository;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore.Diagnostics;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace Finisher.Infrastructure;
 

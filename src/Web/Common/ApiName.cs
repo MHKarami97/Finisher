@@ -1,6 +1,6 @@
 namespace Finisher.Web.Common;
 
-public static class ApiName
+internal static class ApiName
 {
     public static readonly string Ad = nameof(Ad).ToLowerInvariant();
     public static readonly string Banner = nameof(Banner).ToLowerInvariant();
@@ -69,7 +69,7 @@ public static class ApiName
     public static readonly string Warehouse = nameof(Warehouse).ToLowerInvariant();
 }
 
-public static class ApiPostFixName
+internal static class ApiPostFixName
 {
     public static readonly string Popular = nameof(Popular).ToLowerInvariant();
     public static readonly string MostSell = nameof(MostSell).ToLowerInvariant();

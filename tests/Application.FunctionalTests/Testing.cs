@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Finisher.Domain.Constants;
 using Finisher.Infrastructure.Data;
 using Finisher.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Wolverine;
 
 namespace Finisher.Application.FunctionalTests;

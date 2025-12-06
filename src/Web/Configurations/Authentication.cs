@@ -1,12 +1,12 @@
 ﻿using System.Text;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.IdentityModel.Tokens;
 using Finisher.Shared.Consts.Identity;
 using Finisher.Web.Handler;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Finisher.Web.Configurations;
 
-public static class Authentication
+internal static class Authentication
 {
     public static void ConfigureAuthentication(this IServiceCollection services, IConfiguration configuration)
     {
@@ -39,7 +39,7 @@ public static class Authentication
     }
 }
 
-public sealed class JwtOptions
+internal sealed class JwtOptions
 {
     public required string Key { get; init; }
     public required string Issuer { get; init; }

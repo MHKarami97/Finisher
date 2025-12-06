@@ -1,9 +1,9 @@
 ﻿using System.Text.Encodings.Web;
+using Finisher.Application.Interfaces.Security;
+using Finisher.Shared.Extensions;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
-using Finisher.Application.Interfaces.Security;
-using Finisher.Shared.Extensions;
 
 namespace Finisher.Web.Handler;
 

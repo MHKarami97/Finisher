@@ -4,7 +4,7 @@ using OwaspHeaders.Core.Extensions;
 
 namespace Finisher.Web.Configurations;
 
-public static class SecureHeaders
+internal static class SecureHeaders
 {
     public static OwaspHeaders.Core.Models.SecureHeadersMiddlewareConfiguration SecureHeadersConfiguration(IConfiguration configuration)
     {

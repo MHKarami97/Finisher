@@ -2,7 +2,7 @@
 
 namespace Finisher.Web.Endpoints.Identity;
 
-public class SignOutUser(IMessageBus bus) : Endpoint<SignOutUserCommand>
+internal class SignOutUser(IMessageBus bus) : Endpoint<SignOutUserCommand>
 {
     public override void Configure()
     {

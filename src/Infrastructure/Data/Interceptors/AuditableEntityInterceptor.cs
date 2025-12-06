@@ -1,8 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using Finisher.Application.Interfaces.User;
+using Finisher.Domain.Common;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Hosting;
-using Finisher.Application.Interfaces.User;
-using Finisher.Domain.Common;
 
 namespace Finisher.Infrastructure.Data.Interceptors;
 
