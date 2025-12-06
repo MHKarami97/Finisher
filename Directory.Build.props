@@ -1,0 +1,33 @@
+﻿<Project>
+  <PropertyGroup>
+    <Copyright>Copyright © Finisher</Copyright>
+    <Company>Finisher</Company>
+    <Authors>Finisher</Authors>
+    <Version>1.0.0</Version>
+    <Description>Finisher</Description>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsNotAsErrors>NU1901;NU1902;NU1903;NU1904;NU1608;CA2016;CA2201</WarningsNotAsErrors>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <ServerGarbageCollection>true</ServerGarbageCollection>
+    <ConcurrentGarbageCollection>true</ConcurrentGarbageCollection>
+    <RetainVM>false</RetainVM>
+    <ThreadPoolMinThreads>8</ThreadPoolMinThreads>
+    <TieredCompilation>true</TieredCompilation>
+    <TieredPGO>true</TieredPGO>
+    <PublishTrimmed>false</PublishTrimmed>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" PrivateAssets="all"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="../../BannedSymbols.txt"/>
+  </ItemGroup>
+</Project>

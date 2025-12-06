@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ConnectionStringNotFound" xml:space="preserve">
+    <value>کانکشن دیتابیس پیدا نشد</value>
+  </data>
+  <data name="ValueCanNotBeNull" xml:space="preserve">
+    <value>مقدار مورد نظر نمی‌توان خالی باشد</value>
+  </data>
+  <data name="LengthBetween" xml:space="preserve">
+    <value>طول مورد نظر باید بین {0} و {1} باشد. طول کنونی: {2}</value>
+  </data>
+  <data name="NotMatchedPattern" xml:space="preserve">
+    <value>مقدار وارد شده با پترن {0} مچ نمی‌شود</value>
+  </data>
+  <data name="NotDefaultValue" xml:space="preserve">
+    <value>مقدار پیش فرض برای این مورد قابل قبول نیست</value>
+  </data>
+  <data name="NotNegativeOrZero" xml:space="preserve">
+    <value>مقدار {0} باید بیشتر از صفر باشد</value>
+  </data>
+  <data name="InvalidEnum" xml:space="preserve">
+    <value>مقدار مورد نظر برای {0} قابل قبول نیست</value>
+  </data>
+  <data name="NotValidDateRange" xml:space="preserve">
+    <value>مقدار {0} نمی‌تواند بعد از {1} باشد</value>
+  </data>
+  <data name="UserNotFound" xml:space="preserve">
+    <value>کاربر مورد نظر پیدا نشد</value>
+  </data>
+  <data name="CurrentPasswordRequired" xml:space="preserve">
+    <value>رمز عبوری فعلی مورد نیاز است</value>
+  </data>
+  <data name="InvalidVerificationCode" xml:space="preserve">
+    <value>کد تایید وارد شده اشتباه است</value>
+  </data>
+  <data name="EmailConfirmationFailed" xml:space="preserve">
+    <value>خطا در تایید ایمیل</value>
+  </data>
+  <data name="ShortLengthBetween" xml:space="preserve">
+    <value>طول مورد نظر باید بین {0} و {1} باشد</value>
+  </data>
+  <data name="GreaterThanZero" xml:space="preserve">
+    <value>مقدار مورد نظر باید بیشتر از صفر باشد</value>
+  </data>
+  <data name="NotValidValue" xml:space="preserve">
+    <value>مقدار مورد نظر معتبر نمی‌باشد</value>
+  </data>
+  <data name="NotNull" xml:space="preserve">
+    <value>مقدار مورد نظر نمی‌تواند خالی باشد</value>
+  </data>
+  <data name="DateTimeLessThanOrEqual" xml:space="preserve">
+    <value>زمان مورد نظر باید کمتر یا مساوی {0} باشد</value>
+  </data>
+  <data name="DateTimeGreaterThan" xml:space="preserve">
+    <value>زمان مورد نظر باید بیشتر از {0} باشد</value>
+  </data>
+  <data name="MinLength" xml:space="preserve">
+    <value>حداقل طول مورد قبول {0} است</value>
+  </data>
+  <data name="InvalidFileType" xml:space="preserve">
+    <value>نوع فایل مورد نظر نامعتبر است</value>
+  </data>
+  <data name="NotValidId" xml:space="preserve">
+    <value>شناسه وارد شده معتبر نیست</value>
+  </data>
+  <data name="AlreadyExist" xml:space="preserve">
+    <value>آیتمی با این مشخصات موجود می‌باشد</value>
+  </data>
+  <data name="AlreadyExistItem" xml:space="preserve">
+    <value>آیتم {0} با این مشخصات موجود می‌باشد</value>
+  </data>
+  <data name="InvalidRegex" xml:space="preserve">
+    <value>مقدار وارد شده با توجه به Regex معتبر نیست</value>
+  </data>
+  <data name="InvalidValueFor" xml:space="preserve">
+    <value>مقدار مورد نظر برای {0} قابل قبول نیست</value>
+  </data>
+  <data name="NotFound" xml:space="preserve">
+    <value>آیتم مورد نظر پیدا نشد</value>
+  </data>
+  <data name="NotFoundFor" xml:space="preserve">
+    <value>آیتم مورد نظر برای {0} پیدا نشد</value>
+  </data>
+  <data name="UnhandledException" xml:space="preserve">
+    <value>خطا داخلی در سیستم</value>
+  </data>
+  <data name="TokenException" xml:space="preserve">
+    <value>امکان بدست آوردن توکن وجود ندارد</value>
+  </data>
+  <data name="RequiredPhone" xml:space="preserve">
+    <value>شماره موبایل اجباری است</value>
+  </data>
+  <data name="ExpiredToken" xml:space="preserve">
+    <value>توکن منقضی شده است</value>
+  </data>
+</root>

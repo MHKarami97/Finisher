@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Finisher.Domain</RootNamespace>
+    <AssemblyName>Finisher.Domain</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ardalis.Specification" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Business\User\Interfaces\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+</Project>

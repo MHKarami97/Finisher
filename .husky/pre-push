@@ -1,0 +1,22 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Exit early on CI/CD
+if [ "$CI" = "true" ] || [ "$TF_BUILD" = "true" ]; then
+  exit 0
+fi
+
+# Run dotnet build on solution
+echo "⚙️ Building solution..."
+#dotnet build Finisher.Back.sln --no-restore
+#if [ $? -ne 0 ]; then
+#  echo "❌ Build failed. Push aborted."
+#  exit 1
+#fi
+
+# Run dotnet test for unit tests
+echo "Running .UnitTests projects in solution..."
+for proj in $(find tests/UnitTests -name '*.UnitTests.csproj'); do
+    echo "Testing $proj"
+    dotnet test "$proj" --no-build --verbosity normal
+done

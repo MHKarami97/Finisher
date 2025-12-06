@@ -1,0 +1,21 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Exit early on CI/CD
+if [ "$CI" = "true" ] || [ "$TF_BUILD" = "true" ]; then
+  exit 0
+fi
+
+# Get staged C# files (paths relative to repo root)
+staged_files=$(git diff --cached --name-only --diff-filter=ACM | grep '\.cs$' || true)
+
+# Exit if no C# files staged
+[ -z "$staged_files" ] && exit 0
+
+# Run dotnet format on solution with staged files
+echo "⚙️ Format solution..."
+# Run dotnet format in batches of 50 files
+echo "$staged_files" | xargs -n 50 dotnet format Finisher.sln --no-restore --include
+
+# Re-add formatted files to commit
+# git add $staged_files

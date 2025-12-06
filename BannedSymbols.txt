@@ -1,0 +1,5 @@
+# Disallow usage of DateTime.Now
+T:System.DateTime
+M:System.DateTime.Now -> Do not use DateTime.Now. Use IClock.Now instead.
+M:System.DateTime.UtcNow -> Use IClock.UtcNow or another abstraction.
+
