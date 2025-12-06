@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Finisher.Base.Test</RootNamespace>
+    <AssemblyName>Finisher.Base.Test</AssemblyName>
+    <NoWarn>$(NoWarn);CA1707;IDE1006</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="TUnit"/>
+  </ItemGroup>
+
+</Project>

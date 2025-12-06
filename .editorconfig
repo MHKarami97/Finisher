@@ -450,3 +450,6 @@ dotnet_naming_symbols.async_methods.applicable_accessibilities = *
 
 dotnet_naming_style.end_with_async.required_suffix = Async
 dotnet_naming_style.end_with_async.capitalization = pascal_case
+
+[Base.Test.csproj]
+dotnet_naming_rule.async_methods_end_with_async.severity = none

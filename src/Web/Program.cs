@@ -31,6 +31,7 @@ try
     builder.AddWebServices();
     builder.ConfigureKestrel(configuration);
 
+    services.ConfigureSwaggerAuth(configuration);
     services.ConfigureResponseCompression();
     services.ConfigureCors(configuration);
     services.ConfigureRateLimit(configuration);
@@ -61,6 +62,7 @@ try
     app.UseExceptionHandler(_ => { });
     app.ConfigureAuthentication();
     app.ConfigureAuthorization();
+    app.ConfigureSwaggerAuth();
     app.ConfigureEndPoint();
     app.Map("/", () => Results.Redirect($"/{ApiRoutes.Api}"));
     app.UseSecureHeadersMiddleware(SecureHeaders.SecureHeadersConfiguration(configuration));

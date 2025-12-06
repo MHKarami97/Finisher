@@ -1,0 +1,275 @@
+﻿@page
+@model Finisher.Web.Pages.SwaggerLogin
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Swagger Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #0f172a;
+            --card-bg: #020617;
+            --accent: #6f42c1;
+            --accent-alt: #22c55e;
+            --accent-hover: #5b36a0;
+            --border: #1e293b;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --error: #f97373;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1e293b 0, #020617 52%, #000 100%);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .shell {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .card {
+            background: rgba(15, 23, 42, 0.96);
+            border-radius: 1rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8),
+            0 0 0 1px rgba(15, 23, 42, 0.9);
+            padding: 2.25rem 2rem 2rem;
+            backdrop-filter: blur(18px);
+        }
+
+        .title-row {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .logo-pill {
+            width: 44px;
+            height: 44px;
+            border-radius: 13px;
+            background: radial-gradient(circle at 0 0, #a855f7, var(--accent) 45%, var(--accent) 55%, #4c1d95 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f9fafb;
+            font-weight: 800;
+            font-size: 1.05rem;
+            box-shadow: 0 0 0 1px rgba(147, 51, 234, 0.7),
+            0 18px 30px rgba(147, 51, 234, 0.55);
+        }
+
+        .title-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .title-text h1 {
+            margin: 0;
+            font-size: 1.25rem;
+            letter-spacing: 0.03em;
+        }
+
+        .title-text span {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .field-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--muted);
+        }
+
+        .input-shell {
+            position: relative;
+        }
+
+        .input-shell input {
+            width: 100%;
+            padding: 0.75rem 0.9rem;
+            padding-left: 2.35rem;
+            border-radius: 0.7rem;
+            border: 1px solid var(--border);
+            background: rgba(15, 23, 42, 0.95);
+            color: var(--text);
+            outline: none;
+            font-size: 0.94rem;
+            transition: border-color 140ms ease, box-shadow 140ms ease, background 140ms ease;
+        }
+
+        .input-shell input::placeholder {
+            color: #64748b;
+        }
+
+        .input-shell input:focus {
+            border-color: rgba(111, 66, 193, 0.9);
+            box-shadow: 0 0 0 1px rgba(111, 66, 193, 0.7),
+            0 0 0 8px rgba(111, 66, 193, 0.18);
+            background: rgba(15, 23, 42, 0.98);
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.92rem;
+            color: #64748b;
+        }
+
+        .actions-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn {
+            flex: 1;
+            border: none;
+            border-radius: 999px;
+            padding: 0.75rem 1.4rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            cursor: pointer;
+            background: linear-gradient(135deg, var(--accent), var(--accent-alt));
+            color: #020617;
+            box-shadow: 0 12px 20px rgba(111, 66, 193, 0.45),
+            0 0 0 1px rgba(76, 29, 149, 0.9);
+            transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, var(--accent-hover), var(--accent-alt));
+            transform: translateY(-1px);
+            box-shadow: 0 18px 32px rgba(111, 66, 193, 0.6),
+            0 0 0 1px rgba(76, 29, 149, 1);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 8px 16px rgba(111, 66, 193, 0.4),
+            0 0 0 1px rgba(76, 29, 149, 1);
+        }
+
+        .helper {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-align: right;
+        }
+
+        .helper span {
+            color: #a5b4fc;
+        }
+
+        .errors {
+            margin-bottom: 0.75rem;
+            font-size: 0.84rem;
+            color: var(--error);
+        }
+
+        @@media (max-width: 480px) {
+            .card {
+                padding: 1.75rem 1.4rem 1.6rem;
+            }
+
+            .title-text h1 {
+                font-size: 1.1rem;
+            }
+
+            .actions-row {
+                flex-direction: column-reverse;
+                align-items: stretch;
+            }
+
+            .helper {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="shell">
+    <div class="card">
+        <div class="title-row">
+            <div class="logo-pill">API</div>
+            <div class="title-text">
+                <h1>Swagger Access</h1>
+                <span>Sign in to explore your internal API documentation.</span>
+            </div>
+        </div>
+
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="errors">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <div>@error.ErrorMessage</div>
+                }
+            </div>
+        }
+
+        <form method="post">
+            <input type="hidden" asp-for="ReturnUrl"/>
+
+            <div class="field-group">
+                <label class="field-label">Username</label>
+                <div class="input-shell">
+                    <span class="input-icon">&#128100;</span>
+                    <input asp-for="Username" autocomplete="username" placeholder="Enter admin username"/>
+                </div>
+            </div>
+
+            <div class="field-group">
+                <label class="field-label">Password</label>
+                <div class="input-shell">
+                    <span class="input-icon">&#128274;</span>
+                    <input asp-for="Password" type="password" autocomplete="current-password" placeholder="Enter password"/>
+                </div>
+            </div>
+
+            <div class="actions-row">
+                <div class="helper">
+                    Internal tool only. <span>Do not share credentials.</span>
+                </div>
+                <button type="submit" class="submit-btn">
+                    Enter Swagger
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
