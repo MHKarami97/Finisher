@@ -28,28 +28,40 @@ internal static class ExceptionHandlerExtension
             string type;
             string reason;
             string userAction;
-            var httpCode = 0;
+            int httpCode;
 
             switch (ex)
             {
+                case ValidationException vex:
+                    httpCode = StatusCodes.Status400BadRequest;
+                    type = ExceptionInfo.Error400.Type;
+                    reason = vex.Message;
+                    userAction = ExceptionInfo.Error400.UserAction;
+                    break;
+
+                case ArgumentException:
+                case FormatException:
+                case InvalidOperationException:
+                    httpCode = StatusCodes.Status400BadRequest;
+                    type = ExceptionInfo.Error400.Type;
+                    reason = ExceptionInfo.Error400.Reason;
+                    userAction = ExceptionInfo.Error400.UserAction;
+                    break;
+
                 case SecurityTokenExpiredException:
+                case SecurityTokenInvalidSignatureException:
+                case SecurityTokenException:
                     httpCode = StatusCodes.Status401Unauthorized;
                     type = ExceptionInfo.Error401.Type;
                     reason = ExceptionInfo.Error401.Reason;
                     userAction = ExceptionInfo.Error401.UserAction;
                     break;
 
-                case SecurityTokenInvalidSignatureException:
-                    type = ExceptionInfo.Error401.Type;
-                    reason = ExceptionInfo.Error401.Reason;
-                    userAction = ExceptionInfo.Error401.UserAction;
-                    break;
-
-                case ValidationException vex:
-                    httpCode = StatusCodes.Status400BadRequest;
-                    type = ExceptionInfo.Error401.Type;
-                    reason = vex.Message;
-                    userAction = ExceptionInfo.Error401.UserAction;
+                case UnauthorizedAccessException:
+                    httpCode = StatusCodes.Status403Forbidden;
+                    type = ExceptionInfo.Error403.Type;
+                    reason = ExceptionInfo.Error403.Reason;
+                    userAction = ExceptionInfo.Error403.UserAction;
                     break;
 
                 case KeyNotFoundException:
@@ -67,9 +79,6 @@ internal static class ExceptionHandlerExtension
                     break;
             }
 
-            // =============================
-            //         LOGGING
-            // =============================
             var route = feature.Endpoint?.DisplayName?.Split(" => ")[0];
             var exceptionType = ex.GetType().Name;
 
@@ -82,9 +91,6 @@ internal static class ExceptionHandlerExtension
                 logger.LogUnStructuredException(exceptionType, route, reason, ex.StackTrace);
             }
 
-            // =============================
-            //      SEND ERROR RESPONSE
-            // =============================
             ctx.Response.StatusCode = httpCode;
             ctx.Response.ContentType = "application/problem+json";
 

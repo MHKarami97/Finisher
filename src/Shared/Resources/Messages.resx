@@ -132,4 +132,10 @@
   <data name="NotFoundExeptionUserAction" xml:space="preserve">
     <value>Check the address or the item you are looking for, then try again</value>
   </data>
+  <data name="BadRequestExeption" xml:space="preserve">
+    <value>The request data is not valid</value>
+  </data>
+  <data name="BadRequestExeptionUserAction" xml:space="preserve">
+    <value>Review the entered information, correct any errors, and try again</value>
+  </data>
 </root>

@@ -78,6 +78,24 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The request data is not valid.
+        /// </summary>
+        public static string BadRequestExeption {
+            get {
+                return ResourceManager.GetString("BadRequestExeption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Review the entered information, correct any errors, and try again.
+        /// </summary>
+        public static string BadRequestExeptionUserAction {
+            get {
+                return ResourceManager.GetString("BadRequestExeptionUserAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Connection string not found.
         /// </summary>
         public static string ConnectionStringNotFound {
