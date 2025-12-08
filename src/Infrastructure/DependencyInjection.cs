@@ -22,6 +22,11 @@ public static class DependencyInjection
 {
     public static void AddInfrastructureServices(this IHostApplicationBuilder builder)
     {
+        if (builder.Environment.IsDevelopment())
+        {
+            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+        }
+
         var connectionString = builder.Configuration.GetConnectionString(MainConsts.DbConnectionName);
         Guard.Against.Null(connectionString, message: Messages.ConnectionStringNotFound);
 

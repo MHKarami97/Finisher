@@ -1,36 +1,28 @@
 using System.Globalization;
 using Finisher.Infrastructure.Data;
-using Finisher.Web;
 using Finisher.Web.Configurations;
-using OwaspHeaders.Core.Extensions;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-Log.Logger = new LoggerConfiguration()
-    .WriteTo.Console(formatProvider: new CultureInfo("fa-IR"))
-    .CreateBootstrapLogger();
-
-Log.Information("Starting up... {Now}", DateTimeOffset.Now);
-
 try
 {
-    CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("fa-IR");
-    CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("fa-IR");
+    Log.Logger = new LoggerConfiguration()
+        .WriteTo.Console(formatProvider: new CultureInfo(Culture.DefaultCulture))
+        .CreateBootstrapLogger();
 
-    var builderConfiguration = builder.Configuration.AddJsonFile("appsettings.json", reloadOnChange: true, optional: false)
-        .AddJsonFile($"appsettings.{Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT")}.json", reloadOnChange: true, optional: true)
-        .AddUserSecrets<Program>()
-        .AddEnvironmentVariables();
+    Log.Information("Starting up... {Now}", DateTimeOffset.UtcNow);
 
-    var configuration = builderConfiguration.Build();
+    Culture.ConfigureCulture();
+
+    var configuration = builder.ConfigureConfiguration();
     var services = builder.Services;
 
-    builder.AddKeyVaultIfConfigured();
     builder.ConfigureRegistration(configuration);
-    builder.AddWebServices();
     builder.ConfigureKestrel(configuration);
 
+    services.ConfigureServiceCollection();
+    services.ConfigureHealthCheck();
     services.ConfigureSwaggerAuth(configuration);
     services.ConfigureResponseCompression();
     services.ConfigureCors(configuration);
@@ -52,11 +44,11 @@ try
         app.UseHsts();
     }
 
-    app.ConfigureResponseCompression();
     app.UseStaticFiles();
+    app.ConfigureResponseCompression();
     app.ConfigureMiddleware();
     app.ConfigureCors(configuration);
-    app.UseHealthChecks("/health");
+    app.ConfigureHealthCheck();
     app.ConfigureRateLimit();
     app.UseHttpsRedirection();
     app.UseExceptionHandler(_ => { });
@@ -64,8 +56,7 @@ try
     app.ConfigureAuthorization();
     app.ConfigureSwaggerAuth();
     app.ConfigureEndPoint();
-    app.Map("/", () => Results.Redirect($"/{ApiRoutes.Api}"));
-    app.UseSecureHeadersMiddleware(SecureHeaders.SecureHeadersConfiguration(configuration));
+    app.ConfigureOwasp(configuration);
 
     await app.RunAsync();
 }
@@ -79,11 +70,4 @@ finally
     Log.Information("Stopped...");
 
     await Log.CloseAndFlushAsync();
-}
-
-namespace Finisher.Web
-{
-    internal partial class Program
-    {
-    }
 }

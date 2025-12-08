@@ -4,6 +4,7 @@ using FastEndpoints.Swagger;
 using Finisher.Shared.Consts.Identity;
 using Finisher.Web.Extensions;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
 using Namotion.Reflection;
 
 namespace Finisher.Web.Configurations;
@@ -12,6 +13,10 @@ internal static class EndPoint
 {
     public static void ConfigureEndPoint(this IServiceCollection services)
     {
+        services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
+
+        services.AddHttpContextAccessor();
+        services.AddEndpointsApiExplorer();
         services.AddOutputCache();
 
         services.AddFastEndpoints(o =>
@@ -40,6 +45,7 @@ internal static class EndPoint
     public static void ConfigureEndPoint(this WebApplication app)
     {
         app.UseOutputCache();
+        app.Map("/", () => Results.Redirect($"/{ApiRoutes.Api}"));
 
         app.UseResponseCaching()
             .UseCustomExceptionHandler()

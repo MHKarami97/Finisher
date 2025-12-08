@@ -22,4 +22,9 @@ internal static class SecureHeaders
             .UsePermittedCrossDomainPolicies(XPermittedCrossDomainOptionValue.masterOnly)
             .Build();
     }
+    
+    public static void ConfigureOwasp(this WebApplication app, IConfiguration configuration)
+    {
+        app.UseSecureHeadersMiddleware(SecureHeadersConfiguration(configuration));
+    }
 }

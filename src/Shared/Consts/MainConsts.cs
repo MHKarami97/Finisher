@@ -6,6 +6,7 @@ public static class MainConsts
     public const int EncodedIdLength = 10;
     public const string EncodedIdAlphabet = "mTHivO7hx3RAbr1f586SwjNnK2lgpcUVuG09BCtekZdJ4DYFPaWoMLQEsXIqyz";
     public const string DbConnectionName = "FinisherDb";
+    public const string DefaultCulture = "fa-IR";
     public const int DbMaxRetry = 3;
     public const int DbMaxRetryDelayOnSecond = 10;
     public const int DbMaxBatchSize = 100;
