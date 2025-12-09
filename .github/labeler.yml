@@ -1,0 +1,8 @@
+"load-test":
+  - "tests/load-test/**"
+"unit-test":
+  - "tests/unit-tests/**"
+"integration-test":
+  - "tests/integration-tests/**"
+"cache-source":
+  - "src/**"
