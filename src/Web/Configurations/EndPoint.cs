@@ -1,11 +1,14 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 using FastEndpoints.Swagger;
+using Finisher.Shared.Consts;
 using Finisher.Shared.Consts.Identity;
 using Finisher.Web.Extensions;
+using Finisher.Web.Handler;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Namotion.Reflection;
+using Scalar.AspNetCore;
 
 namespace Finisher.Web.Configurations;
 
@@ -16,6 +19,7 @@ internal static class EndPoint
         services.Configure<ApiBehaviorOptions>(options => options.SuppressModelStateInvalidFilter = true);
 
         services.AddHttpContextAccessor();
+        services.AddOpenApi();
         services.AddEndpointsApiExplorer();
         services.AddOutputCache();
 
@@ -31,10 +35,10 @@ internal static class EndPoint
                 o.ValidateNullability();
                 o.DocumentSettings = s =>
                 {
-                    s.DocumentName = StaticDoc.SiteName;
-                    s.Title = StaticDoc.SiteName;
+                    s.DocumentName = DocConsts.Version;
+                    s.Title = DocConsts.SiteName;
                     s.Description = string.Empty;
-                    s.Version = StaticDoc.Version;
+                    s.Version = DocConsts.Version;
                     s.AllowNullableBodyParameters = true;
                 };
                 o.ShortSchemaNames = true;
@@ -46,9 +50,10 @@ internal static class EndPoint
     {
         app.UseOutputCache();
         app.Map("/", () => Results.Redirect($"/{ApiRoutes.Api}"));
+        var isDevelopment = app.Environment.IsDevelopment();
 
         app.UseResponseCaching()
-            .UseCustomExceptionHandler()
+            .UseCustomExceptionHandler(showExceptionDetail: isDevelopment)
             .UseFastEndpoints(c =>
             {
                 c.Endpoints.RoutePrefix = ApiRoutes.Api;
@@ -60,26 +65,29 @@ internal static class EndPoint
                 c.Security.RoleClaimType = ClaimType.Role;
                 c.Security.NameClaimType = ClaimType.Name;
                 c.Endpoints.ShortNames = true;
-            }).UseSwaggerGen(uiConfig: a =>
+            }).UseSwaggerGen(g =>
             {
+                g.Path = DocConsts.OpenApiJson;
+            }, uiConfig: a =>
+            {
+                a.DocumentPath = DocConsts.OpenApiJson;
+                a.Path = DocConsts.SwaggerAddress;
                 a.PersistAuthorization = true;
                 a.EnableTryItOut = true;
-                a.DocumentTitle = StaticDoc.SiteName;
-                a.CustomInlineStyles =
-                    ".swagger-ui .topbar{background-color:#6f42c1}" +
-                    ".swagger-ui .btn.authorize{background-color:#6f42c1;border-color:#6f42c1}" +
-                    ".swagger-ui .btn.authorize svg{fill:white}" +
-                    ".swagger-ui .opblock.opblock-get .opblock-summary-method,.swagger-ui .opblock.opblock-post .opblock-summary-method{background-color:#6f42c1}" +
-                    ".swagger-ui .info h1,.swagger-ui .info h2{color:#6f42c1}" +
-                    ".version-stamp{display:none}" +
-                    ".models{display:none}" +
-                    ".swagger-ui .topbar .download-url-wrapper .select-label select{border: 2px solid #6f42c1}" +
-                    ".swagger-ui .btn.authorize{color:#3b4151}" +
-                    ".swagger-ui .topbar a{display:none}" +
-                    ".swagger-ui .info .title small.version-stamp{display:none}" +
-                    ".swagger-ui section.models.is-open h4{display:none}" +
-                    ".swagger-ui .opblock.opblock-post .opblock-summary-method{background-color:#49cc90}" +
-                    ".swagger-ui .opblock.opblock-get .opblock-summary-method{background-color:#61affe}";
+                a.DocumentTitle = DocConsts.SiteName;
+                a.CustomInlineStyles = DocConsts.SwaggerStyle;
             });
+
+        app.MapScalarApiReference(DocConsts.ScalarAddress, o =>
+        {
+            o.Title = DocConsts.SiteName;
+            o.Favicon = DocConsts.FavIcon;
+            o.Theme = ScalarTheme.Moon;
+            o.Layout = ScalarLayout.Modern;
+            o.ShowDeveloperTools = DeveloperToolsVisibility.Localhost;
+            o.WithOpenApiRoutePattern(DocConsts.OpenApiJson);
+            o.AddPreferredSecuritySchemes(CustomJwt.AuthSchemaName);
+            o.AddHttpAuthentication(CustomJwt.AuthSchemaName, _ => { });
+        });
     }
 }

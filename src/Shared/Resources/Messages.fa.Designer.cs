@@ -132,6 +132,24 @@ namespace Finisher.Shared.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Document.
+        /// </summary>
+        public static string Document {
+            get {
+                return ResourceManager.GetString("Document", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sign in to explore API.
+        /// </summary>
+        public static string DocumentDescription {
+            get {
+                return ResourceManager.GetString("DocumentDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email confirmation failed.
         /// </summary>
         public static string EmailConfirmationFailed {
@@ -380,24 +398,6 @@ namespace Finisher.Shared.Resources {
         public static string ShortLengthBetween {
             get {
                 return ResourceManager.GetString("ShortLengthBetween", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Swagger.
-        /// </summary>
-        public static string Swagger {
-            get {
-                return ResourceManager.GetString("Swagger", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Sign in to explore API.
-        /// </summary>
-        public static string SwaggerDescription {
-            get {
-                return ResourceManager.GetString("SwaggerDescription", resourceCulture);
             }
         }
         

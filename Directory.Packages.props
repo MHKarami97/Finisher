@@ -33,6 +33,7 @@
     <PackageVersion Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="$(MicrosoftExtensionsVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="$(MicrosoftExtensionsVersion)" />
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="$(MicrosoftExtensionsVersion)" />
+    <PackageVersion Include="Scalar.AspNetCore" Version="2.11.2" />
     <PackageVersion Include="System.Configuration.ConfigurationManager" Version="$(MicrosoftExtensionsVersion)" />
     <!-- FastEndpoints -->
     <PackageVersion Include="FastEndpoints" Version="$(FastEndpoints)" />

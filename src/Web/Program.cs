@@ -23,7 +23,7 @@ try
 
     services.ConfigureServiceCollection();
     services.ConfigureHealthCheck();
-    services.ConfigureSwaggerAuth(configuration);
+    services.ConfigureDocumentAuth(configuration);
     services.ConfigureResponseCompression();
     services.ConfigureCors(configuration);
     services.ConfigureRateLimit(configuration);
@@ -54,7 +54,7 @@ try
     app.UseExceptionHandler(_ => { });
     app.ConfigureAuthentication();
     app.ConfigureAuthorization();
-    app.ConfigureSwaggerAuth();
+    app.ConfigureDocumentAuth();
     app.ConfigureEndPoint();
     app.ConfigureOwasp(configuration);
 

@@ -1,6 +1,5 @@
 ﻿using Finisher.Application.Exceptions;
 using Finisher.Shared.Exceptions;
-using Finisher.Shared.Resources;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.IdentityModel.Tokens;
 
@@ -10,8 +9,10 @@ abstract class CustomExceptionHandler;
 
 internal static class ExceptionHandlerExtension
 {
-    public static IApplicationBuilder UseCustomExceptionHandler(this IApplicationBuilder app, ILogger? logger = null,
-        bool logStructuredException = false, bool useGenericReason = false)
+    public static IApplicationBuilder UseCustomExceptionHandler(this IApplicationBuilder app,
+        ILogger? logger = null,
+        bool logStructuredException = false,
+        bool showExceptionDetail = false)
     {
         app.UseExceptionHandler(errApp => errApp.Run(async ctx =>
         {
@@ -99,7 +100,8 @@ internal static class ExceptionHandlerExtension
                 Type = type,
                 Code = httpCode,
                 UserAction = userAction,
-                Reason = useGenericReason ? Messages.UnhandledException : reason
+                Reason = reason,
+                Exception = showExceptionDetail ? ex : null
             };
 
             await ctx.Response.WriteAsJsonAsync(response, ctx.RequestAborted);
@@ -115,4 +117,5 @@ internal sealed class ApiErrorResponse
     public required int Code { get; init; }
     public required string Reason { get; init; }
     public string? UserAction { get; init; }
+    public Exception? Exception { get; init; }
 }

@@ -141,10 +141,10 @@
   <data name="Login" xml:space="preserve">
     <value>ورود</value>
   </data>
-  <data name="Swagger" xml:space="preserve">
-    <value>Swagger</value>
+  <data name="Document" xml:space="preserve">
+    <value>داکیومنت</value>
   </data>
-  <data name="SwaggerDescription" xml:space="preserve">
+  <data name="DocumentDescription" xml:space="preserve">
     <value>ورود به بخش سرویس‌ها</value>
   </data>
   <data name="Username" xml:space="preserve">

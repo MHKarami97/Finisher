@@ -51,7 +51,7 @@ public static class DependencyInjection
                 .UseDbCallsIfCachingProviderIsDown(TimeSpan.FromMinutes(MainConsts.DbCallIfCacheDownOnMinute))
         );
 
-        builder.Services.AddDbContextPool<ApplicationDbContext>((sp, options) =>
+        builder.Services.AddDbContext<ApplicationDbContext>((sp, options) =>
         {
             options.AddInterceptors(sp.GetServices<ISaveChangesInterceptor>());
             options.UseSqlServer(connectionString,

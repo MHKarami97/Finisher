@@ -2,7 +2,7 @@
 @using System.Globalization
 @using Finisher.Shared.Resources
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model Finisher.Web.Pages.SwaggerLoginModel
+@model Finisher.Web.Pages.DocsLoginModel
 
 @{
     Layout = null;
@@ -13,7 +13,7 @@
 <html lang="@CultureInfo.CurrentUICulture.TwoLetterISOLanguageName" dir="@(isRtl ? "rtl" : "ltr")">
 <head>
     <meta charset="utf-8"/>
-    <title>Swagger</title>
+    <title>Document</title>
     <link rel="icon" href="/swagger/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <style>
@@ -232,8 +232,8 @@
         <div class="title-row">
             <div class="logo-pill">API</div>
             <div class="title-text">
-                <h1>@Messages.Swagger</h1>
-                <span>@Messages.SwaggerDescription</span>
+                <h1>@Messages.Document</h1>
+                <span>@Messages.DocumentDescription</span>
             </div>
         </div>
 
