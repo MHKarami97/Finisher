@@ -28,7 +28,6 @@
     <Content Remove="src/Web/BuildHost-netcore/**"/>
     <Compile Remove="src/Web/BuildHost-netcore/**"/>
     <EmbeddedResource Remove="src/Web/BuildHost-netcore/**"/>
-
     <None Remove="src/Web/BuildHost-net472/**"/>
     <Content Remove="src/Web/BuildHost-net472/**"/>
     <Compile Remove="src/Web/BuildHost-net472/**"/>
@@ -40,10 +39,17 @@
     <Content Remove="src/Infrastructure/BuildHost-netcore/**"/>
     <Compile Remove="src/Infrastructure/BuildHost-netcore/**"/>
     <EmbeddedResource Remove="src/Infrastructure/BuildHost-netcore/**"/>
-
     <None Remove="src/Infrastructure/BuildHost-net472/**"/>
     <Content Remove="src/Infrastructure/BuildHost-net472/**"/>
     <Compile Remove="src/Infrastructure/BuildHost-net472/**"/>
     <EmbeddedResource Remove="src/Infrastructure/BuildHost-net472/**"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" PrivateAssets="all"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="../../BannedSymbols.txt"/>
   </ItemGroup>
 </Project>

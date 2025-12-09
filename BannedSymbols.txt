@@ -1,5 +1,68 @@
-# Disallow usage of DateTime.Now
-T:System.DateTime
-M:System.DateTime.Now -> Do not use DateTime.Now. Use IClock.Now instead.
-M:System.DateTime.UtcNow -> Use IClock.UtcNow or another abstraction.
+# ---- Time & date ----
+P:System.DateTime.Now;Use TimeProvider.GetUtcNow() + DateTimeOffset for testable, timezone-safe time handling
+P:System.DateTime.UtcNow;Use TimeProvider.GetUtcNow() so time can be controlled in tests
+P:System.DateTimeOffset.Now;Use TimeProvider.GetUtcNow() so all time is UTC and testable
 
+# ---- Paths & file I/O ----
+M:System.IO.Path.Combine(System.String,System.String);Use Path.Join for simple segment joining and to avoid accidental rooted paths
+M:System.IO.Path.Combine(System.String,System.String,System.String);Use Path.Join for simple segment joining and to avoid accidental rooted paths
+M:System.IO.Path.Combine(System.String,System.String,System.String,System.String);Use Path.Join for simple segment joining and to avoid accidental rooted paths
+M:System.IO.Path.Combine(System.String[]);Use Path.Join for simple segment joining and to avoid accidental rooted paths
+
+M:System.IO.File.ReadAllText(System.String);Use File.ReadAllTextAsync with CancellationToken to avoid blocking threads
+M:System.IO.File.WriteAllText(System.String,System.String);Use File.WriteAllTextAsync with CancellationToken to avoid blocking threads
+M:System.IO.File.ReadAllBytes(System.String);Use File.ReadAllBytesAsync with CancellationToken to avoid blocking threads
+M:System.IO.File.WriteAllBytes(System.String,System.Byte[]);Use File.WriteAllBytesAsync with CancellationToken to avoid blocking threads
+
+# ---- Cryptography (hashing) ----
+M:System.Security.Cryptography.SHA1.Create;Use SHA256.Create or a stronger algorithm (e.g. SHA512) instead of SHA1
+T:System.Security.Cryptography.SHA1;Use SHA256.Create or a stronger algorithm (e.g. SHA512) instead of SHA1
+M:System.Security.Cryptography.MD5.Create;Do not use MD5 for security. Use SHA256.Create instead
+T:System.Security.Cryptography.MD5;Do not use MD5 for security. Use SHA256.Create instead
+M:System.Security.Cryptography.RNGCryptoServiceProvider.#ctor;Use RandomNumberGenerator.Create() instead of RNGCryptoServiceProvider
+
+# ---- Randomness ----
+M:System.Random.#ctor;Avoid default Random. Use RandomNumberGenerator for security or inject Random/RandomNumberGenerator for testability
+
+# ---- Encoding & culture ----
+M:System.Text.Encoding.GetEncoding(System.String);Avoid code-page encodings. Use Encoding.UTF8 or Unicode explicitly
+P:System.StringComparer.CurrentCulture;Use Ordinal or OrdinalIgnoreCase for non-UI comparisons
+P:System.StringComparer.CurrentCultureIgnoreCase;Use OrdinalIgnoreCase for non-UI comparisons
+
+# ---- String operations ----
+M:System.String.ToLower;Use string.Equals / Compare with StringComparison or ToLowerInvariant/ToUpperInvariant explicitly
+M:System.String.ToUpper;Use string.Equals / Compare with StringComparison or ToLowerInvariant/ToUpperInvariant explicitly
+M:System.String.ToLowerInvariant;Prefer explicit StringComparison (Ordinal/OrdinalIgnoreCase) instead of normalizing strings where possible
+M:System.String.ToUpperInvariant;Prefer explicit StringComparison (Ordinal/OrdinalIgnoreCase) instead of normalizing strings where possible
+
+# ---- Threading / sync-over-async ----
+M:System.Threading.Tasks.Task.Wait;Do not block on async. Use await all the way or explicitly justify blocking
+M:System.Threading.Tasks.Task`1.Result;Do not block on async. Use await all the way or explicitly justify blocking
+M:System.Threading.Tasks.Task.WaitAll(System.Threading.Tasks.Task[]);Do not block on async. Use await Task.WhenAll instead
+M:System.Threading.Tasks.Task.WaitAny(System.Threading.Tasks.Task[]);Do not block on async. Use await Task.WhenAny instead
+
+# ---- Obsolete / insecure web APIs ----
+M:System.Web.HttpContext.get_Current;Do not use HttpContext.Current. Use HttpContext from ASP.NET Core DI / HttpContextAccessor
+T:System.Web.Security.FormsAuthentication;Do not use FormsAuthentication. Use ASP.NET Core authentication/authorization
+
+# ---- Reflection-heavy / dynamic ----
+M:System.Type.InvokeMember(System.String,System.Reflection.BindingFlags,System.Reflection.Binder,System.Object,System.Object[]);Avoid late-bound reflection APIs. Use strongly-typed accessors or compiled expressions
+
+# ---- Serialization ----
+T:System.Web.Script.Serialization.JavaScriptSerializer;Do not use JavaScriptSerializer. Use System.Text.Json or validated libraries
+M:System.Runtime.Serialization.DataContractSerializer.#ctor;Prefer System.Text.Json for new code, or centralize and review all DataContractSerializer usage
+T:Newtonsoft.Json.JsonConvert;For new code, prefer System.Text.Json; if Newtonsoft is required, wrap it behind an abstraction
+
+# ---- Networking / HTTP ----
+T:System.Net.WebClient;Use HttpClient or IHttpClientFactory instead of WebClient
+T:System.Net.HttpWebRequest;Use HttpClient or IHttpClientFactory instead of HttpWebRequest
+M:System.Net.ServicePointManager.set_ServerCertificateValidationCallback(System.Net.Security.RemoteCertificateValidationCallback);Do not globally override certificate validation. Use per-request handlers and validate certificates explicitly
+
+# ---- Insecure protocols & SSL ----
+P:System.Security.Authentication.SslProtocols.Ssl3;Do not use SSL3. Use TLS1.2+ only
+P:System.Security.Authentication.SslProtocols.Tls;Do not use TLS 1.0. Use TLS1.2+ only
+P:System.Security.Authentication.SslProtocols.Tls11;Do not use TLS 1.1. Use TLS1.2+ only
+
+# ---- Misc legacy / dangerous ----
+T:System.AppDomain;Avoid AppDomain in modern .NET. Use AssemblyLoadContext or process-level isolation
+M:System.Environment.Exit(System.Int32);Do not call Environment.Exit in libraries. Surface failure and let host decide

@@ -35,6 +35,8 @@ internal static class DocumentAuth
         var authOptions = app.Services
             .GetRequiredService<IOptions<DocsAuthOptions>>()
             .Value;
+        
+        var timeProvider = app.Services.GetRequiredService<TimeProvider>();
 
         app.UseWhen(
             ctx => ctx.Request.Path.StartsWithSegments(DocConsts.StarterAddress, StringComparison.OrdinalIgnoreCase),
@@ -52,7 +54,7 @@ internal static class DocumentAuth
 
                             if (authOptions.ExpireEveryWeek)
                             {
-                                var now = DateTimeOffset.UtcNow;
+                                var now = timeProvider.GetUtcNow();
                                 var utcDate = now.UtcDateTime;
 
                                 var isoWeek = ISOWeek.GetWeekOfYear(utcDate);

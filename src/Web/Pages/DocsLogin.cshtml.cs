@@ -11,7 +11,7 @@ using Microsoft.Extensions.Options;
 
 namespace Finisher.Web.Pages;
 
-public class DocsLoginModel(IOptions<DocsAuthOptions> optionsAccessor) : PageModel
+public class DocsLoginModel(IOptions<DocsAuthOptions> optionsAccessor, TimeProvider timeProvider) : PageModel
 {
     private readonly DocsAuthOptions _options = optionsAccessor.Value;
 
@@ -48,7 +48,7 @@ public class DocsLoginModel(IOptions<DocsAuthOptions> optionsAccessor) : PageMod
 
         if (_options.ExpireEveryWeek)
         {
-            var now = DateTimeOffset.UtcNow;
+            var now = timeProvider.GetUtcNow();
             var utcDate = now.UtcDateTime;
             var isoWeek = ISOWeek.GetWeekOfYear(utcDate);
             var isoYear = ISOWeek.GetYear(utcDate);
