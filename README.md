@@ -41,12 +41,12 @@ Adjust this list to match the actual code; it is structured for clarity and futu
 
 - **ASP.NET Core minimal / controller‑based API** structured around use cases, not tables.
 - **Long‑running request logging** and correlation hooks to detect slow endpoints in production.
-- **API documentation support** (e.g., Swagger/Scalar) ready to expose the public API surface.[10]
+- **API documentation support** (e.g., Swagger/Scalar) ready to expose the public API surface.
 
 ### Quality, Tooling & Performance
 
 - **Roslyn analyzers and BannedSymbols** configured for secure, modern .NET usage (banning `DateTime.Now`, sync‑over‑async, legacy APIs, etc.).
-- **Time abstraction** via `TimeProvider` / `DateTimeOffset` for testable, timezone‑safe time handling.[11]
+- **Time abstraction** via `TimeProvider` / `DateTimeOffset` for testable, timezone‑safe time handling.
 - **Logging best practices**: guarded logging to avoid expensive message construction when disabled (e.g., `CA1873`‑compliant patterns).
 - **Nullable reference types and code analysis** enabled to catch null and API‑usage mistakes early.
 - **Unit/integration test projects** scaffolded and aligned with the architecture (tests by module/bounded context).
@@ -82,15 +82,15 @@ This structure follows a classic DDD‑plus‑Hexagonal layout, where the Web an
 
 Once the repo is marked as a **template repository** in GitHub settings, you can create a new project with one click.
 
-- Open the Finisher repository in GitHub.[12]
-- Click **Use this template** → **Create a new repository**.[13]
+- Open the Finisher repository in GitHub.
+- Click **Use this template** → **Create a new repository**.
 - Choose a name (e.g., `MyCompany.MyProduct`), visibility, and click **Create repository from template**.
 
 This gives you a new repo with the same structure but without tying to the original Git history.
 
 ### 2. Install as a `dotnet new` Template (optional)
 
-If `.template.config/template.json` is present, Finisher can be installed as a .NET template.[14]
+If `.template.config/template.json` is present, Finisher can be installed as a .NET template.
 
 - Clone the repo locally.
 - Run:  
@@ -120,7 +120,7 @@ Typical steps after generating a project:
    - Update root assembly names and default project names.
 
 2. **Define your domain model**  
-   - Identify core entities, value objects, and aggregates from your domain (e.g., `CarePlan`, `Visit`, `Report` in your healthcare idea).[15]
+   - Identify core entities, value objects, and aggregates from your domain (e.g., `CarePlan`, `Visit`, `Report` in your healthcare idea).
    - Model invariants inside the aggregate roots and express important business changes via domain events.
 
 3. **Implement application use cases**  
@@ -133,7 +133,7 @@ Typical steps after generating a project:
 
 5. **Expose APIs / UI**  
    - Map HTTP endpoints that call into the application layer only.
-   - Add API docs (Swagger/Scalar) and authentication if needed.[10]
+   - Add API docs (Swagger/Scalar) and authentication if needed.
 
 6. **Harden quality and performance**  
    - Tune `BannedSymbols`, analyzer severities, and logging policies to match your standards.
@@ -147,7 +147,7 @@ Finisher is meant to evolve as a high‑quality template; contributions that imp
 
 ### Working on Issues
 
-- **Check Issues**: Look for open issues labeled `help wanted` or `good first issue`.[12]
+- **Check Issues**: Look for open issues labeled `help wanted` or `good first issue`.
 - **Discuss first**: For larger changes (new patterns, libraries, or breaking layout changes), open an issue and describe the motivation and approach.
 
 ### Development Workflow
@@ -163,7 +163,7 @@ Finisher is meant to evolve as a high‑quality template; contributions that imp
   - Application orchestrates domain and infrastructure, but does not depend on UI.
 - Prefer **Value Objects** over primitive obsession and encapsulate invariants.
 - Use **async** APIs and avoid sync‑over‑async or blocking on tasks.
-- Use `TimeProvider` instead of `DateTime.Now`/`UtcNow` for testability.[11]
+- Use `TimeProvider` instead of `DateTime.Now`/`UtcNow` for testability.
 - Follow existing analyzer rules; if you need to relax or extend them, explain why in the PR.
 
 ### Submitting a Pull Request
