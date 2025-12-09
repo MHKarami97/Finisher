@@ -35,7 +35,7 @@ internal static class DocumentAuth
         var authOptions = app.Services
             .GetRequiredService<IOptions<DocsAuthOptions>>()
             .Value;
-        
+
         var timeProvider = app.Services.GetRequiredService<TimeProvider>();
 
         app.UseWhen(
