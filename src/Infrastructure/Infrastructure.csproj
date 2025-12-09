@@ -32,9 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Data\Seed\allCategory.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Data\Seed\allCity.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
