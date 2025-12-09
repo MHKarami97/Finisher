@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Finisher.DDD.Templates</PackageId>
+    <Version>1.0.0</Version>
+    <PackageType>Template</PackageType>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <ContentTargetFolders>content</ContentTargetFolders>
+    <PackageReleaseNotes>Finisher</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="..\Finisher\**\*"
+             Exclude="..\Finisher\**\bin\**;..\Finisher\**\obj\**"/>
+    <Compile Remove="**\*"/>
+  </ItemGroup>
+</Project>

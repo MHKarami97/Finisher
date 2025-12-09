@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Mohammad Hossein Karami",
+  "groupIdentity": "Finisher.DDD.Api",
+  "identity": "Finisher.DDD.Api.CSharp",
+  "name": "Finisher DDD Service",
+  "shortName": "finisher-ddd",
+  "sourceName": "Finisher",
+  "preferNameDirectory": true,
+  "classifications": [
+    "Web",
+    "DDD",
+    "CleanArchitecture"
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}
